@@ -49,7 +49,7 @@
     },
     "openrouter_volume": {
       "source": "openrouter_volume",
-      "started_at": "2026-10-27T18:30:38+00:00",
+      "started_at": "2026-10-27T19:25:04+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_volume_by_author": {
@@ -64,11 +64,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.1
+      "duration_s": 0.3
     },
     "gpu_prices": {
       "source": "gpu_prices",
-      "started_at": "2026-10-27T18:30:38+00:00",
+      "started_at": "2026-10-27T19:25:05+00:00",
       "status": "warning",
       "datasets": {
         "gpu_prices": {
@@ -81,17 +81,17 @@
         "forkastet runpod H200 community (H200 NVL): 0.5 uden for [0.8, 18.0]",
         "vast: VAST_API_KEY ikke sat – Vast.ai springes over"
       ],
-      "duration_s": 1.6
+      "duration_s": 1.1
     },
     "edgar": {
       "source": "edgar",
-      "started_at": "2026-10-27T19:22:45+00:00",
+      "started_at": "2026-10-27T19:25:06+00:00",
       "status": "ok",
       "datasets": {
         "edgar_quarterly": {
           "records": 632,
-          "added": 96,
-          "unchanged": 536
+          "added": 0,
+          "unchanged": 632
         },
         "edgar_last_filing": {
           "records": 7,
@@ -100,11 +100,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 1.6
+      "duration_s": 0.7
     },
     "fmp": {
       "source": "fmp",
-      "started_at": "2026-10-27T18:30:41+00:00",
+      "started_at": "2026-10-27T19:25:07+00:00",
       "status": "skipped",
       "error": "FMP_API_KEY ikke sat – FMP springes over",
       "warnings": [],
@@ -112,35 +112,38 @@
     },
     "edgar_releases": {
       "source": "edgar_releases",
-      "started_at": "2026-10-27T19:22:47+00:00",
+      "started_at": "2026-10-27T19:25:07+00:00",
       "status": "ok",
       "datasets": {
         "cloud_releases": {
-          "records": 58,
-          "added": 58,
+          "records": 0,
+          "added": 0,
           "unchanged": 0
         }
       },
       "warnings": [],
-      "duration_s": 17.3
+      "duration_s": 0.1
     }
   },
   "last_run": {
-    "at": "2026-10-27T19:23:04+00:00",
-    "schedule": "all",
+    "at": "2026-10-27T19:25:07+00:00",
+    "schedule": "weekly",
     "sources": [
+      "openrouter_volume",
+      "gpu_prices",
       "edgar",
-      "edgar_releases"
+      "edgar_releases",
+      "fmp"
     ]
   },
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-10-27T19:24:31+00:00"
+      "at": "2026-10-27T19:25:07+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-10-27T19:24:32+00:00"
+      "at": "2026-10-27T19:25:07+00:00"
     }
   }
 }
