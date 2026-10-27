@@ -323,38 +323,38 @@
   }
 
   function renderVolumeChart() {
-    const c = state.scores.charts;
-    const wk = c.openrouter_weekly_tokens || [];
-    const vs = c.volume_vs_spend || [];
-    // Basis = første uge med prisdata (ellers første uge). Begge serier = 100 i basisugen.
-    const baseDate = vs.length ? vs[0].date : wk.length ? wk[0].date : null;
-    const near = (d) => wk.reduce((best, p) => (Math.abs(new Date(p.date) - new Date(d)) < Math.abs(new Date(best.date) - new Date(d)) ? p : best), wk[0]);
-    const baseTok = baseDate && wk.length ? near(baseDate).tokens : null;
-    const dates = [...new Set([...wk.map((p) => p.date), ...vs.map((p) => p.date)])].sort();
-    const volMap = Object.fromEntries(wk.map((p) => [p.date, (p.tokens / baseTok) * 100]));
-    // Volumen fra modeldata (samme kilde som forbrug) bruges, hvor uge-serien mangler
-    vs.forEach((p) => { if (volMap[p.date] == null) volMap[p.date] = p.volume_index; });
-    const spMap = Object.fromEntries(vs.map((p) => [p.date, p.spend_index]));
-    const vol = dates.map((d) => (volMap[d] == null ? null : volMap[d]));
-    const sp = dates.map((d) => (spMap[d] == null ? null : spMap[d]));
+    // Begge linjer fra samme kilde: de 20 største modeller per uge (volumen og estimeret forbrug)
+    const vs = state.scores.charts.volume_vs_spend || [];
+    const dates = vs.map((p) => p.date);
+    const vol = vs.map((p) => p.volume_index);
+    const sp = vs.map((p) => p.spend_index);
     const s1 = css("--s1"), s2 = css("--s2");
     const fmt = (v) => num(v, 0);
     const opts = baseOptions(fmt);
-    opts.plugins.tooltip.callbacks = { title: (x) => "Uge til " + fmtDate(dates[x[0].dataIndex]), label: (x) => (x.parsed.y == null ? null : ` ${num(x.parsed.y, 1)}  ${x.dataset.label}`) };
+    opts.plugins.tooltip.callbacks = {
+      title: (x) => "Uge til " + fmtDate(dates[x[0].dataIndex]),
+      label: (x) => ` ${num(x.parsed.y, 0)}  ${x.dataset.label}`,
+      afterBody: (x) => {
+        const p = vs[x[0].dataIndex];
+        return p ? `Gns. pris $${num(p.blended_usd_per_mtok, 2)} per 1M tokens` : "";
+      },
+    };
     opts.scales.y.type = "logarithmic";
-    opts.scales.y.ticks.callback = (v) => ([1, 2, 5].includes(Number(String(v)[0])) && /^[125]0*$/.test(String(v)) ? fmt(v) : "");
+    opts.scales.y.ticks.callback = (v) => (/^[125]0*$/.test(String(v)) ? fmt(v) : "");
     mkChart("chart-volume", {
       type: "line",
-      data: { labels: dates.map(shortDate), datasets: [lineDataset("Tokenvolumen", vol, s1, false), lineDataset("Estimeret forbrug (USD)", sp, s2, sp.filter((v) => v != null).length < 6)] },
+      data: { labels: dates.map(shortDate), datasets: [lineDataset("Tokenvolumen", vol, s1, vs.length < 6), lineDataset("Estimeret forbrug (USD)", sp, s2, vs.length < 6)] },
       options: opts,
     });
     legend("legend-volume", [["Tokenvolumen", s1], ["Estimeret forbrug (USD)", s2]]);
-    const nSp = vs.length;
-    $("note-volume").textContent = nSp < 4
-      ? `Forbrugsserien opbygges: ${nSp} uge(r) med prisdata (fra ${fmtDate(baseDate)}). Volumenhistorikken går ${wk.length} uger tilbage. Logaritmisk akse.`
-      : "Logaritmisk akse. Afstanden mellem linjerne = det kumulative fald i pris per token (inkl. mix-effekt).";
-    tableView("table-chart-volume", ["Uge til", "Volumen (indeks)", "Forbrug (indeks)"],
-      dates.map((d, i) => [fmtDate(d), vol[i] == null ? "–" : num(vol[i], 1), sp[i] == null ? "–" : num(sp[i], 1)]).reverse());
+    const last = vs[vs.length - 1];
+    $("note-volume").textContent = vs.length < 4
+      ? `Forbrugsserien opbygges: ${vs.length} uge(r) med prisdata.`
+      : `Siden ${fmtDate(dates[0])}: volumen ×${num(last.volume_index / 100, 1)}, forbrug ×${num(last.spend_index / 100, 1)} – ` +
+        `gennemsnitsprisen per token er faldet ${num((1 - last.spend_index / last.volume_index) * 100, 0)} %. ` +
+        "Logaritmisk akse. De 20 største modeller på OpenRouter per uge; historik før okt. 2026 fra arkiverede sider.";
+    tableView("table-chart-volume", ["Uge til", "Volumen (indeks)", "Forbrug (indeks)", "USD per 1M tokens"],
+      vs.map((p) => [fmtDate(p.date), num(p.volume_index, 1), num(p.spend_index, 1), "$" + num(p.blended_usd_per_mtok, 3)]).reverse());
   }
 
   function renderGpuChart() {
@@ -377,10 +377,10 @@
     $("note-gpu").textContent = dates.length < 8
       ? `Historikken opbygges: ${dates.length} måling(er) siden ${fmtDate(dates[0])}. Kapacitetslaget scorer først efter ca. 12 ugentlige målinger.`
       : "";
-    const prov = (state.scores.charts.gpu_prices_by_provider || []).filter((r) => r.date === dates[dates.length - 1]);
-    tableView("table-chart-gpu", ["Udbyder · GPU · type", "USD/GPU-time", "Lager"],
+    const prov = state.scores.charts.gpu_prices_by_provider || [];
+    tableView("table-chart-gpu", ["Udbyder · GPU · type (seneste måling)", "USD/GPU-time", "Lager / dato"],
       prov.sort((a, b) => GPU_ORDER.indexOf(a.gpu) - GPU_ORDER.indexOf(b.gpu) || a.provider.localeCompare(b.provider))
-        .map((r) => [`${r.provider} · ${r.gpu} · ${r.price_type.replace("_", "-")}`, r.usd_per_gpu_hr == null ? "–" : "$" + num(r.usd_per_gpu_hr, 2), r.availability || (r.n_offers != null ? r.n_offers + " tilbud" : "–")]));
+        .map((r) => [`${r.provider} · ${r.gpu} · ${r.price_type.replace("_", "-")}`, r.usd_per_gpu_hr == null ? "–" : "$" + num(r.usd_per_gpu_hr, 2), r.availability || (r.n_offers != null ? r.n_offers + " tilbud" : fmtDate(r.date))]));
   }
 
   function renderMarket() {

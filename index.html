@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Demand Monitor</title>
   <meta name="description" content="Overvågning af AI-efterspørgsel i fem lag: volumen, pris, kapacitet, cloud-omsætning og capex.">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=2">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/app.js" defer></script>
+  <script src="assets/app.js?v=2" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -62,7 +62,7 @@
         <header class="chart-head">
           <div>
             <h3>Tokenvolumen vs. estimeret dollarforbrug</h3>
-            <p class="muted small">OpenRouter, indeks 100 ved første uge med prisdata. Volumen over forbrug = prisen per token falder.</p>
+            <p class="muted small">OpenRouter, indeks 100 i første uge. Volumen over forbrug = prisen per token falder.</p>
           </div>
           <button class="ghost-btn" data-table-for="chart-volume" type="button">Vis tabel</button>
         </header>
@@ -76,7 +76,7 @@
         <header class="chart-head">
           <div>
             <h3>GPU-lejepriser per model</h3>
-            <p class="muted small">Median af on-demand-listepriser på tværs af udbydere, USD per GPU-time.</p>
+            <p class="muted small">Ugentlig median af on-demand-listepriser på tværs af udbydere (seneste kendte pris per udbyder), USD per GPU-time.</p>
           </div>
           <button class="ghost-btn" data-table-for="chart-gpu" type="button">Vis tabel</button>
         </header>
