@@ -1,0 +1,865 @@
+{
+  "generated_at": "2026-10-27T18:30:41+00:00",
+  "series": {
+    "google_tokens_per_month": {
+      "layer": 1,
+      "description": "Googles samlede tokens per måned på tværs af produkter og API",
+      "unit": "tokens/måned",
+      "expected_every_days": 400,
+      "points": [
+        {
+          "period_end": "2025-05-31",
+          "value": 480000000000000.0,
+          "published": "2026-05-19",
+          "confidence": "primary",
+          "source": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+          "note": "'Last year at I/O, that grew to roughly 480 trillion tokens'"
+        },
+        {
+          "period_end": "2026-05-31",
+          "value": 3200000000000000.0,
+          "published": "2026-05-19",
+          "confidence": "primary",
+          "source": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+          "note": "'jumped 7x to over 3.2 quadrillion per month'"
+        }
+      ],
+      "status": {
+        "latest": "2026-05-31",
+        "due": false,
+        "reason": null
+      }
+    },
+    "google_api_tokens_per_minute": {
+      "layer": 1,
+      "description": "Tokens per minut via Googles model-API'er (direkte kundebrug) – bedste kvartalsvise volumenserie fra en lab",
+      "unit": "tokens/minut",
+      "company": "GOOGL",
+      "points": [
+        {
+          "period_end": "2025-12-31",
+          "value": 10000000000.0,
+          "published": "2026-04-29",
+          "confidence": "primary",
+          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/",
+          "note": "'up from 10 billion last quarter'"
+        },
+        {
+          "period_end": "2026-03-31",
+          "value": 16000000000.0,
+          "published": "2026-04-29",
+          "confidence": "primary",
+          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 22000000000.0,
+          "published": "2026-07-22",
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000066/googexhibit991q22026.htm",
+          "note": "'Gemini models now process 22 billion API tokens per minute'"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "openai_annualized_revenue": {
+      "layer": 2,
+      "description": "OpenAI annualiseret omsætning (run-rate). OpenAI medregner kun egen andel af partnersalg",
+      "unit": "USD",
+      "expected_every_days": 60,
+      "points": [
+        {
+          "period_end": "2026-02-28",
+          "value": 25000000000.0,
+          "confidence": "estimate",
+          "source": "https://www.techloy.com/openai-hits-25-billion-in-annualized-revenue-while-anthropic-surges-to-19-billion/",
+          "note": "The Information"
+        },
+        {
+          "period_end": "2026-10-08",
+          "value": 50000000000.0,
+          "published": "2026-10-08",
+          "confidence": "estimate",
+          "source": "https://news.bgov.com/artificial-intelligence/openais-annualized-revenue-nears-50-billion-ft-says",
+          "note": "FT: 'nears $50bn'. Axios meldte ~70 mia. i sep. – modstridende. OpenAI har ingen officielle run-rate-tal"
+        }
+      ],
+      "status": {
+        "latest": "2026-10-08",
+        "due": false,
+        "reason": null
+      }
+    },
+    "anthropic_annualized_revenue": {
+      "layer": 2,
+      "description": "Anthropic annualiseret omsætning (run-rate). Medregner bruttoværdi af noget salg via fx AWS",
+      "unit": "USD",
+      "expected_every_days": 60,
+      "points": [
+        {
+          "period_end": "2025-12-31",
+          "value": 9000000000.0,
+          "published": "2026-04-06",
+          "confidence": "primary",
+          "source": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+        },
+        {
+          "period_end": "2026-02-12",
+          "value": 14000000000.0,
+          "published": "2026-02-12",
+          "confidence": "primary",
+          "source": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+        },
+        {
+          "period_end": "2026-04-06",
+          "value": 30000000000.0,
+          "published": "2026-04-06",
+          "confidence": "primary",
+          "source": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+          "note": "'surpassed $30 billion'"
+        },
+        {
+          "period_end": "2026-05-28",
+          "value": 47000000000.0,
+          "published": "2026-05-28",
+          "confidence": "primary",
+          "source": "https://www.anthropic.com/news/series-h",
+          "note": "'crossed $47 billion earlier this month'"
+        },
+        {
+          "period_end": "2026-07-31",
+          "value": 65000000000.0,
+          "published": "2026-08-17",
+          "confidence": "estimate",
+          "source": "https://www.axios.com/2026/08/17/anthropic-revenue-run-rate-ipo-openai",
+          "note": "Bloomberg/Axios, tal delt med investorer"
+        },
+        {
+          "period_end": "2026-09-30",
+          "value": 67200000000.0,
+          "published": "2026-10-14",
+          "confidence": "estimate",
+          "source": "https://www.forbes.com/sites/ronschmelzer/2026/10/26/anthropic-ipo-ai-boom-valuation-risks/",
+          "note": "Q3-omsætning 16,8 mia. × 4 (Reuters/FT, oplyst til investorer). Kvartalsomsætning, ikke månedlig run-rate"
+        }
+      ],
+      "status": {
+        "latest": "2026-09-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "sdllmtk_usd_per_mtok": {
+      "layer": 2,
+      "description": "Silicon Data LLM Token Expenditure Index (Bloomberg SDLLMTK), USD per 1M tokens, forbrugsvægtet",
+      "unit": "USD/1M tokens",
+      "expected_every_days": 14,
+      "points": [
+        {
+          "period_end": "2025-12-31",
+          "value": 1.09,
+          "confidence": "secondary",
+          "source": "https://sanj.dev/post/sdllmtk-llm-token-expenditure-index/",
+          "note": "Ca. niveau ved lancering dec. 2025"
+        },
+        {
+          "period_end": "2026-05-31",
+          "value": 2.07,
+          "confidence": "secondary",
+          "source": "https://sanj.dev/post/sdllmtk-llm-token-expenditure-index/",
+          "note": "Top i maj 2026"
+        },
+        {
+          "period_end": "2026-08-31",
+          "value": 0.97,
+          "confidence": "secondary",
+          "source": "https://www.digitaltoday.co.kr/en/view/98935/ai-token-price-index-hits-record-low-amid-intensifying-competition",
+          "note": "Rekordlav ifølge CNBC"
+        },
+        {
+          "period_end": "2026-10-25",
+          "value": 0.95,
+          "confidence": "primary",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "note": "+1,0 % over 7 dage"
+        }
+      ],
+      "status": {
+        "latest": "2026-10-25",
+        "due": false,
+        "reason": null
+      }
+    },
+    "azure_growth_cc_pct": {
+      "layer": 4,
+      "description": "Azure og andre cloud-tjenester, vækst å/å i faste valutakurser",
+      "unit": "pct",
+      "company": "MSFT",
+      "points": [
+        {
+          "period_end": "2026-03-31",
+          "value": 39,
+          "confidence": "primary",
+          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 43,
+          "published": "2026-07-29",
+          "confidence": "primary",
+          "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+          "note": "Guidance for kvartal til 2026-09-30: ca. 45 % (CFO på kaldet)"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "msft_commercial_rpo": {
+      "layer": 4,
+      "description": "Microsoft commercial remaining performance obligation",
+      "unit": "USD",
+      "company": "MSFT",
+      "points": [
+        {
+          "period_end": "2026-06-30",
+          "value": 678000000000.0,
+          "published": "2026-07-29",
+          "confidence": "primary",
+          "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+          "note": "+84 % å/å"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "microsoft_ai_run_rate": {
+      "layer": 4,
+      "description": "Microsoft AI-forretning, annualiseret omsætning (oplyses uregelmæssigt)",
+      "unit": "USD",
+      "expected_every_days": 200,
+      "points": [
+        {
+          "period_end": "2026-03-31",
+          "value": 37000000000.0,
+          "confidence": "primary",
+          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+          "note": "'surpassed $37 billion this quarter, growing 123% year-over-year'"
+        }
+      ],
+      "status": {
+        "latest": "2026-03-31",
+        "due": true,
+        "reason": "210 dage gammel (> 200)"
+      }
+    },
+    "google_cloud_revenue": {
+      "layer": 4,
+      "description": "Google Cloud segmentomsætning",
+      "unit": "USD",
+      "company": "GOOGL",
+      "points": [
+        {
+          "period_end": "2026-03-31",
+          "value": 20000000000.0,
+          "growth_pct": 63,
+          "published": "2026-04-29",
+          "confidence": "secondary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000043/googexhibit991q12026.htm"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 24800000000.0,
+          "growth_pct": 82,
+          "published": "2026-07-22",
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000066/googexhibit991q22026.htm"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "google_cloud_backlog": {
+      "layer": 4,
+      "description": "Google Cloud backlog",
+      "unit": "USD",
+      "company": "GOOGL",
+      "points": [
+        {
+          "period_end": "2026-03-31",
+          "value": 460000000000.0,
+          "published": "2026-04-29",
+          "confidence": "primary",
+          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/",
+          "note": "'nearly doubled quarter-on-quarter to over $460 billion'"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 514000000000.0,
+          "published": "2026-07-22",
+          "confidence": "primary",
+          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "aws_revenue": {
+      "layer": 4,
+      "description": "AWS segmentomsætning",
+      "unit": "USD",
+      "company": "AMZN",
+      "points": [
+        {
+          "period_end": "2026-06-30",
+          "value": 42200000000.0,
+          "growth_pct": 37,
+          "published": "2026-07-30",
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872426000024/amzn-20260630xex991.htm",
+          "note": "Hurtigste vækst i 18 kvartaler; run-rate 169 mia."
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "aws_backlog": {
+      "layer": 4,
+      "description": "AWS backlog",
+      "unit": "USD",
+      "company": "AMZN",
+      "points": [
+        {
+          "period_end": "2026-03-31",
+          "value": 364000000000.0,
+          "confidence": "secondary",
+          "source": "https://vectorshift.ai/research/companies/amazon-com/earnings/2026-q2"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 496000000000.0,
+          "published": "2026-07-30",
+          "confidence": "secondary",
+          "source": "https://vectorshift.ai/research/companies/amazon-com/earnings/2026-q2",
+          "note": "Fra earnings-kaldet; ikke i pressemeddelelsen"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "oracle_oci_revenue": {
+      "layer": 4,
+      "description": "Oracle Cloud Infrastructure (IaaS) omsætning",
+      "unit": "USD",
+      "company": "ORCL",
+      "points": [
+        {
+          "period_end": "2026-08-31",
+          "value": 7400000000.0,
+          "growth_pct": 121,
+          "published": "2026-09-10",
+          "confidence": "primary",
+          "source": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/"
+        }
+      ],
+      "status": {
+        "latest": "2026-08-31",
+        "due": false,
+        "reason": null
+      }
+    },
+    "oracle_rpo": {
+      "layer": 4,
+      "description": "Oracle remaining performance obligations",
+      "unit": "USD",
+      "company": "ORCL",
+      "points": [
+        {
+          "period_end": "2026-08-31",
+          "value": 664000000000.0,
+          "published": "2026-09-10",
+          "confidence": "primary",
+          "source": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/",
+          "note": "Analytikere anslår ~halvdelen fra OpenAI (koncentrationsrisiko)"
+        }
+      ],
+      "status": {
+        "latest": "2026-08-31",
+        "due": false,
+        "reason": null
+      }
+    },
+    "capex_guidance": {
+      "layer": 5,
+      "description": "Hyperscaler capex-guidance (USD), low/high; value = midtpunkt",
+      "unit": "USD",
+      "kind": "guidance",
+      "points": [
+        {
+          "company": "META",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2025-12-31",
+          "low": 115000000000.0,
+          "high": 135000000000.0,
+          "value": 125000000000.0,
+          "published": "2026-01-28",
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-12312025xexhibit991.htm",
+          "note": "Første udmelding for 2026"
+        },
+        {
+          "company": "MSFT",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-03-31",
+          "value": 190000000000.0,
+          "confidence": "primary",
+          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+          "note": "'roughly $190 billion' for kalenderår 2026"
+        },
+        {
+          "company": "GOOGL",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-03-31",
+          "low": 180000000000.0,
+          "high": 190000000000.0,
+          "value": 185000000000.0,
+          "published": "2026-04-29",
+          "confidence": "secondary",
+          "source": "https://fn2.ai/earnings/goog/2026-q2"
+        },
+        {
+          "company": "AMZN",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-03-31",
+          "value": 200000000000.0,
+          "confidence": "secondary",
+          "source": "https://fortune.com/2026/07/30/andy-jassy-amazon-capex-demand-aws-pga-tour/"
+        },
+        {
+          "company": "META",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-03-31",
+          "low": 125000000000.0,
+          "high": 145000000000.0,
+          "value": 135000000000.0,
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026050596/meta-06302026xexhibit991.htm",
+          "note": "Angivet som 'prior outlook' i Q2-release"
+        },
+        {
+          "company": "MSFT",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-06-30",
+          "value": 175000000000.0,
+          "published": "2026-07-29",
+          "confidence": "primary",
+          "comparable_with_previous": false,
+          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+          "note": "~175 mia. Faldet skyldes flytning af datacenterleje fra finansiel til operationel leasing – IKKE en reel nedjustering. FY27-capex 'will grow year-over-year'; Q1 FY27 >50 mia."
+        },
+        {
+          "company": "GOOGL",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-06-30",
+          "low": 195000000000.0,
+          "high": 205000000000.0,
+          "value": 200000000000.0,
+          "published": "2026-07-22",
+          "confidence": "secondary",
+          "source": "https://fn2.ai/earnings/goog/2026-q2",
+          "note": "Hævet; 2027 forventes højere. Fra CFO på kaldet"
+        },
+        {
+          "company": "AMZN",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-06-30",
+          "value": 220000000000.0,
+          "published": "2026-07-30",
+          "confidence": "secondary",
+          "source": "https://fortune.com/2026/07/30/andy-jassy-amazon-capex-demand-aws-pga-tour/",
+          "note": "Hævet pga. dyrere hukommelse og mere kapacitet. Jassy: kapacitet rækker ikke til efterspørgslen i 2026 eller 2027"
+        },
+        {
+          "company": "META",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-06-30",
+          "low": 130000000000.0,
+          "high": 145000000000.0,
+          "value": 137500000000.0,
+          "published": "2026-07-29",
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026050596/meta-06302026xexhibit991.htm"
+        },
+        {
+          "company": "ORCL",
+          "fiscal_year": 2027,
+          "basis": "fiscal",
+          "period_end": "2026-08-31",
+          "low": 90000000000.0,
+          "high": 95000000000.0,
+          "value": 92500000000.0,
+          "published": "2026-09-10",
+          "confidence": "secondary",
+          "source": "https://quartr.com/events/oracle-corporation-orcl-q1-2027_3gvkOKJp",
+          "note": "Heraf ~70 mia. egen capex + 20–25 mia., som kunder forventes at betale tilbage"
+        },
+        {
+          "company": "META",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-09-30",
+          "low": 135000000000.0,
+          "high": 145000000000.0,
+          "value": 140000000000.0,
+          "published": "2026-10-21",
+          "confidence": "primary",
+          "source": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-09302026xexhibit991.htm",
+          "note": "Bunden hævet. Ingen 2027-guidance endnu"
+        }
+      ],
+      "status": {
+        "latest": "2026-09-30",
+        "per_company": {
+          "AMZN": {
+            "latest": "2026-06-30",
+            "due": false,
+            "reason": null
+          },
+          "GOOGL": {
+            "latest": "2026-06-30",
+            "due": false,
+            "reason": null
+          },
+          "META": {
+            "latest": "2026-09-30",
+            "due": false,
+            "reason": null
+          },
+          "MSFT": {
+            "latest": "2026-06-30",
+            "due": false,
+            "reason": null
+          },
+          "ORCL": {
+            "latest": "2026-08-31",
+            "due": false,
+            "reason": null
+          }
+        },
+        "due": false
+      }
+    },
+    "tsmc_hpc_share_pct": {
+      "layer": 5,
+      "description": "HPC-andel af TSMC's omsætning",
+      "unit": "pct",
+      "expected_every_days": 100,
+      "points": [
+        {
+          "period_end": "2025-09-30",
+          "value": 57,
+          "published": "2026-10-15",
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 66,
+          "published": "2026-10-15",
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf"
+        },
+        {
+          "period_end": "2026-09-30",
+          "value": 68,
+          "published": "2026-10-15",
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf",
+          "note": "HPC-omsætning +22 % k/k"
+        }
+      ],
+      "status": {
+        "latest": "2026-09-30",
+        "due": false,
+        "reason": null
+      }
+    },
+    "tsmc_monthly_revenue_backfill": {
+      "layer": 5,
+      "description": "TSMC månedsomsætning før pipelinen startede, i tusinde TWD (samme enhed som TWSE-feedet). Krydstjekket: sep-25 og sep-26 matcher TWSE-data præcist.",
+      "unit": "kTWD",
+      "expected_every_days": 100000,
+      "points": [
+        {
+          "period_end": "2024-01-31",
+          "value": 215785000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-02-29",
+          "value": 181648000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-03-31",
+          "value": 195211000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-04-30",
+          "value": 236021000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-05-31",
+          "value": 229620000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-06-30",
+          "value": 207869000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-07-31",
+          "value": 256953000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-08-31",
+          "value": 250866000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-09-30",
+          "value": 251873000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-10-31",
+          "value": 314240000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-11-30",
+          "value": 276058000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2024-12-31",
+          "value": 278163000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2024"
+        },
+        {
+          "period_end": "2025-01-31",
+          "value": 293288000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-02-28",
+          "value": 260009000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-03-31",
+          "value": 285957000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-04-30",
+          "value": 349567000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-05-31",
+          "value": 320516000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-06-30",
+          "value": 263709000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-07-31",
+          "value": 323166000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-08-31",
+          "value": 335772000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-09-30",
+          "value": 330980000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-10-31",
+          "value": 367473000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-11-30",
+          "value": 343614000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2025-12-31",
+          "value": 335003000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2025"
+        },
+        {
+          "period_end": "2026-01-31",
+          "value": 401255000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-02-28",
+          "value": 317657000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-03-31",
+          "value": 415191000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-04-30",
+          "value": 410726000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-05-31",
+          "value": 416975000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 442680000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-07-31",
+          "value": 467580000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        },
+        {
+          "period_end": "2026-08-31",
+          "value": 514806000.0,
+          "confidence": "primary",
+          "source": "https://investor.tsmc.com/english/monthly-revenue/2026"
+        }
+      ],
+      "status": {
+        "latest": "2026-08-31",
+        "due": false,
+        "reason": null
+      }
+    },
+    "nvidia_datacenter_revenue": {
+      "layer": 5,
+      "description": "Nvidia Data Center-segment",
+      "unit": "USD",
+      "company": "NVDA",
+      "points": [
+        {
+          "period_end": "2026-07-26",
+          "value": 89000000000.0,
+          "growth_pct": 117,
+          "published": "2026-08-26",
+          "confidence": "primary",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+          "note": "Q3-guidance (total omsætning): 108 mia. ±2 %, uden Kina"
+        }
+      ],
+      "status": {
+        "latest": "2026-07-26",
+        "due": false,
+        "reason": null
+      }
+    },
+    "skhynix_revenue_krw": {
+      "layer": 5,
+      "description": "SK hynix kvartalsomsætning (KRW)",
+      "unit": "KRW",
+      "expected_every_days": 100,
+      "points": [
+        {
+          "period_end": "2026-06-30",
+          "value": 79318700000000.0,
+          "published": "2026-07-28",
+          "confidence": "secondary",
+          "source": "https://www.kosmo.com.my/2026/07/28/sk-hynix-announces-2q26-financial-results/"
+        }
+      ],
+      "status": {
+        "latest": "2026-06-30",
+        "due": true,
+        "reason": "119 dage gammel (> 100)"
+      }
+    }
+  }
+}

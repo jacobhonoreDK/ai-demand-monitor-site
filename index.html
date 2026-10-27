@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Demand Monitor</title>
+  <meta name="description" content="Overvågning af AI-efterspørgsel i fem lag: volumen, pris, kapacitet, cloud-omsætning og capex.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div>
+        <h1>AI Demand Monitor</h1>
+        <p class="muted" id="asof">Indlæser data …</p>
+      </div>
+      <div class="topbar-actions">
+        <nav class="tabs" role="tablist" aria-label="Visning">
+          <button role="tab" aria-selected="true" data-tab="overview" id="tab-overview">Oversigt</button>
+          <button role="tab" aria-selected="false" data-tab="manual" id="tab-manual">Manuelle input <span class="badge" id="manual-badge" hidden></span></button>
+          <button role="tab" aria-selected="false" data-tab="status" id="tab-status">Datastatus <span class="badge" id="status-badge" hidden></span></button>
+        </nav>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Skift mellem lyst og mørkt tema" title="Skift tema">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="load-error" class="notice notice-error" hidden></div>
+
+    <!-- ===================== OVERSIGT ===================== -->
+    <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+      <div class="hero-row">
+        <article class="card hero">
+          <h2 class="card-label">AI Demand Health</h2>
+          <div class="hero-main">
+            <div class="hero-value" id="health-value">–</div>
+            <div class="hero-meta">
+              <div class="hero-band" id="health-band"></div>
+              <div class="muted small" id="health-coverage"></div>
+            </div>
+          </div>
+          <div class="hero-spark" id="health-spark" aria-hidden="true"></div>
+          <p class="muted small">0–100. 50 = indikatorerne er på deres normale niveau i forhold til egen historik.</p>
+        </article>
+        <article class="card summary">
+          <h2 class="card-label">Sammenfatning</h2>
+          <p class="summary-text" id="summary-text"></p>
+          <h2 class="card-label signals-label">Signaler</h2>
+          <ul class="signals" id="signals"></ul>
+        </article>
+      </div>
+
+      <h2 class="section-title">De fem lag</h2>
+      <div class="layers" id="layers"></div>
+      <div id="layer-detail" class="card layer-detail" hidden></div>
+
+      <h2 class="section-title">Volumen eller pris?</h2>
+      <article class="card chart-card">
+        <header class="chart-head">
+          <div>
+            <h3>Tokenvolumen vs. estimeret dollarforbrug</h3>
+            <p class="muted small">OpenRouter, indeks 100 ved første uge med prisdata. Volumen over forbrug = prisen per token falder.</p>
+          </div>
+          <button class="ghost-btn" data-table-for="chart-volume" type="button">Vis tabel</button>
+        </header>
+        <div class="chart-box"><canvas id="chart-volume" aria-label="Tokenvolumen og estimeret forbrug, indekseret"></canvas></div>
+        <div class="legend" id="legend-volume"></div>
+        <p class="muted small chart-note" id="note-volume"></p>
+        <div class="table-view" id="table-chart-volume" hidden></div>
+      </article>
+
+      <article class="card chart-card">
+        <header class="chart-head">
+          <div>
+            <h3>GPU-lejepriser per model</h3>
+            <p class="muted small">Median af on-demand-listepriser på tværs af udbydere, USD per GPU-time.</p>
+          </div>
+          <button class="ghost-btn" data-table-for="chart-gpu" type="button">Vis tabel</button>
+        </header>
+        <div class="chart-box"><canvas id="chart-gpu" aria-label="GPU-lejepriser per model over tid"></canvas></div>
+        <div class="legend" id="legend-gpu"></div>
+        <p class="muted small chart-note" id="note-gpu"></p>
+        <div class="table-view" id="table-chart-gpu" hidden></div>
+      </article>
+
+      <h2 class="section-title">Markedskontrol <span class="muted small">– påvirker ikke scoren</span></h2>
+      <article class="card market" id="market"></article>
+    </section>
+
+    <!-- ===================== MANUELLE INPUT ===================== -->
+    <section id="panel-manual" role="tabpanel" aria-labelledby="tab-manual" hidden>
+      <article class="card">
+        <h2 class="card-label">Manuelle kvartalstal</h2>
+        <p class="muted small">Opdateres i <code>manual_inputs.yaml</code>. "Mangler" betyder, at selskabet har rapporteret en nyere periode (ifølge EDGAR), eller at serien er ældre end forventet.</p>
+        <div class="table-scroll"><table class="data-table" id="manual-table"></table></div>
+      </article>
+    </section>
+
+    <!-- ===================== DATASTATUS ===================== -->
+    <section id="panel-status" role="tabpanel" aria-labelledby="tab-status" hidden>
+      <article class="card">
+        <h2 class="card-label">Kilder – seneste kørsel</h2>
+        <div class="table-scroll"><table class="data-table" id="sources-table"></table></div>
+      </article>
+      <article class="card">
+        <h2 class="card-label">Indikatorer uden for scoren</h2>
+        <div class="table-scroll"><table class="data-table" id="excluded-table"></table></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="wrap muted small footer">
+    Kilder: OpenRouter, CoreWeave, Lambda, Nebius, Verda, RunPod, Vast.ai, SEC EDGAR, TWSE, TSMC IR, Yahoo Finance og manuelle input fra earnings. Ikke investeringsrådgivning.
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>

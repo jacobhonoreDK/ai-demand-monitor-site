@@ -1,0 +1,137 @@
+{
+  "sources": {
+    "openrouter_prices": {
+      "source": "openrouter_prices",
+      "started_at": "2026-10-27T18:30:34+00:00",
+      "status": "ok",
+      "datasets": {
+        "openrouter_prices": {
+          "records": 456,
+          "added": 3,
+          "unchanged": 453
+        },
+        "openrouter_price_snapshots": {
+          "records": 1,
+          "added": 0,
+          "unchanged": 1
+        }
+      },
+      "warnings": [],
+      "duration_s": 0.1
+    },
+    "twse": {
+      "source": "twse",
+      "started_at": "2026-10-27T18:30:34+00:00",
+      "status": "ok",
+      "datasets": {
+        "twse_monthly_revenue": {
+          "records": 1,
+          "added": 0,
+          "unchanged": 1
+        }
+      },
+      "warnings": [],
+      "duration_s": 2.5
+    },
+    "markets": {
+      "source": "markets",
+      "started_at": "2026-10-27T18:30:37+00:00",
+      "status": "ok",
+      "datasets": {
+        "market_prices": {
+          "records": 110,
+          "added": 5,
+          "unchanged": 105
+        }
+      },
+      "warnings": [],
+      "duration_s": 1.7
+    },
+    "openrouter_volume": {
+      "source": "openrouter_volume",
+      "started_at": "2026-10-27T18:30:38+00:00",
+      "status": "ok",
+      "datasets": {
+        "openrouter_volume_by_author": {
+          "records": 510,
+          "added": 0,
+          "unchanged": 510
+        },
+        "openrouter_volume_by_model": {
+          "records": 664,
+          "added": 0,
+          "unchanged": 664
+        }
+      },
+      "warnings": [],
+      "duration_s": 0.1
+    },
+    "gpu_prices": {
+      "source": "gpu_prices",
+      "started_at": "2026-10-27T18:30:38+00:00",
+      "status": "warning",
+      "datasets": {
+        "gpu_prices": {
+          "records": 56,
+          "added": 7,
+          "unchanged": 49
+        }
+      },
+      "warnings": [
+        "forkastet runpod H200 community (H200 NVL): 0.5 uden for [0.8, 18.0]",
+        "vast: VAST_API_KEY ikke sat – Vast.ai springes over"
+      ],
+      "duration_s": 1.6
+    },
+    "edgar": {
+      "source": "edgar",
+      "started_at": "2026-10-27T18:30:40+00:00",
+      "status": "ok",
+      "datasets": {
+        "edgar_quarterly": {
+          "records": 536,
+          "added": 0,
+          "unchanged": 536
+        },
+        "edgar_last_filing": {
+          "records": 7,
+          "added": 0,
+          "unchanged": 7
+        }
+      },
+      "warnings": [],
+      "duration_s": 0.9
+    },
+    "fmp": {
+      "source": "fmp",
+      "started_at": "2026-10-27T18:30:41+00:00",
+      "status": "skipped",
+      "error": "FMP_API_KEY ikke sat – FMP springes over",
+      "warnings": [],
+      "duration_s": 0.0
+    }
+  },
+  "last_run": {
+    "at": "2026-10-27T18:30:41+00:00",
+    "schedule": "all",
+    "sources": [
+      "openrouter_prices",
+      "twse",
+      "markets",
+      "openrouter_volume",
+      "gpu_prices",
+      "edgar",
+      "fmp"
+    ]
+  },
+  "postprocess": {
+    "manual": {
+      "status": "ok",
+      "at": "2026-10-27T18:30:41+00:00"
+    },
+    "scoring": {
+      "status": "ok",
+      "at": "2026-10-27T18:30:42+00:00"
+    }
+  }
+}
