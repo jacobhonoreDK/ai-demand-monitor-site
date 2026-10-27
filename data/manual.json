@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:10:56+00:00",
+  "generated_at": "2026-10-27T19:24:31+00:00",
   "series": {
     "google_tokens_per_month": {
       "layer": 1,
@@ -196,6 +196,7 @@
     },
     "azure_growth_cc_pct": {
       "layer": 4,
+      "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "Azure og andre cloud-tjenester, vækst å/å i faste valutakurser",
       "unit": "pct",
       "company": "MSFT",
@@ -218,11 +219,12 @@
       "status": {
         "latest": "2026-06-30",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
       }
     },
     "msft_commercial_rpo": {
       "layer": 4,
+      "automated_by": "SEC EDGAR RPO (edgar_quarterly)",
       "description": "Microsoft commercial remaining performance obligation",
       "unit": "USD",
       "company": "MSFT",
@@ -239,7 +241,7 @@
       "status": {
         "latest": "2026-06-30",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC EDGAR RPO (edgar_quarterly))"
       }
     },
     "microsoft_ai_run_rate": {
@@ -264,6 +266,7 @@
     },
     "google_cloud_revenue": {
       "layer": 4,
+      "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "Google Cloud segmentomsætning",
       "unit": "USD",
       "company": "GOOGL",
@@ -288,11 +291,12 @@
       "status": {
         "latest": "2026-06-30",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
       }
     },
     "google_cloud_backlog": {
       "layer": 4,
+      "automated_by": "SEC EDGAR RPO (edgar_quarterly)",
       "description": "Google Cloud backlog",
       "unit": "USD",
       "company": "GOOGL",
@@ -316,11 +320,12 @@
       "status": {
         "latest": "2026-06-30",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC EDGAR RPO (edgar_quarterly))"
       }
     },
     "aws_revenue": {
       "layer": 4,
+      "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "AWS segmentomsætning",
       "unit": "USD",
       "company": "AMZN",
@@ -338,7 +343,7 @@
       "status": {
         "latest": "2026-06-30",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
       }
     },
     "aws_backlog": {
@@ -370,6 +375,7 @@
     },
     "oracle_oci_revenue": {
       "layer": 4,
+      "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "Oracle Cloud Infrastructure (IaaS) omsætning",
       "unit": "USD",
       "company": "ORCL",
@@ -386,11 +392,12 @@
       "status": {
         "latest": "2026-08-31",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
       }
     },
     "oracle_rpo": {
       "layer": 4,
+      "automated_by": "SEC EDGAR RPO (edgar_quarterly)",
       "description": "Oracle remaining performance obligations",
       "unit": "USD",
       "company": "ORCL",
@@ -407,7 +414,7 @@
       "status": {
         "latest": "2026-08-31",
         "due": false,
-        "reason": null
+        "reason": "Opdateres automatisk (SEC EDGAR RPO (edgar_quarterly))"
       }
     },
     "capex_guidance": {

@@ -85,12 +85,12 @@
     },
     "edgar": {
       "source": "edgar",
-      "started_at": "2026-10-27T18:30:40+00:00",
+      "started_at": "2026-10-27T19:22:45+00:00",
       "status": "ok",
       "datasets": {
         "edgar_quarterly": {
-          "records": 536,
-          "added": 0,
+          "records": 632,
+          "added": 96,
           "unchanged": 536
         },
         "edgar_last_filing": {
@@ -100,7 +100,7 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.9
+      "duration_s": 1.6
     },
     "fmp": {
       "source": "fmp",
@@ -109,29 +109,38 @@
       "error": "FMP_API_KEY ikke sat – FMP springes over",
       "warnings": [],
       "duration_s": 0.0
+    },
+    "edgar_releases": {
+      "source": "edgar_releases",
+      "started_at": "2026-10-27T19:22:47+00:00",
+      "status": "ok",
+      "datasets": {
+        "cloud_releases": {
+          "records": 58,
+          "added": 58,
+          "unchanged": 0
+        }
+      },
+      "warnings": [],
+      "duration_s": 17.3
     }
   },
   "last_run": {
-    "at": "2026-10-27T18:30:41+00:00",
+    "at": "2026-10-27T19:23:04+00:00",
     "schedule": "all",
     "sources": [
-      "openrouter_prices",
-      "twse",
-      "markets",
-      "openrouter_volume",
-      "gpu_prices",
       "edgar",
-      "fmp"
+      "edgar_releases"
     ]
   },
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-10-27T19:10:56+00:00"
+      "at": "2026-10-27T19:24:31+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-10-27T19:10:57+00:00"
+      "at": "2026-10-27T19:24:32+00:00"
     }
   }
 }
