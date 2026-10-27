@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Demand Monitor</title>
   <meta name="description" content="Overvågning af AI-efterspørgsel i fem lag: volumen, pris, kapacitet, cloud-omsætning og capex.">
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <link rel="stylesheet" href="assets/style.css?v=3">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/app.js?v=2" defer></script>
+  <script src="assets/app.js?v=3" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -21,6 +21,7 @@
           <button role="tab" aria-selected="true" data-tab="overview" id="tab-overview">Oversigt</button>
           <button role="tab" aria-selected="false" data-tab="manual" id="tab-manual">Manuelle input <span class="badge" id="manual-badge" hidden></span></button>
           <button role="tab" aria-selected="false" data-tab="status" id="tab-status">Datastatus <span class="badge" id="status-badge" hidden></span></button>
+          <button role="tab" aria-selected="false" data-tab="explain" id="tab-explain">Forklaring</button>
         </nav>
         <button class="icon-btn" id="theme-toggle" type="button" aria-label="Skift mellem lyst og mørkt tema" title="Skift tema">◐</button>
       </div>
@@ -43,7 +44,7 @@
             </div>
           </div>
           <div class="hero-spark" id="health-spark" aria-hidden="true"></div>
-          <p class="muted small">0–100. 50 = indikatorerne er på deres normale niveau i forhold til egen historik.</p>
+          <p class="muted small">0–100. 50 = indikatorerne er på deres normale niveau i forhold til egen historik. <a href="#forklaring-health" data-goto="explain">Hvad betyder tallet?</a></p>
         </article>
         <article class="card summary">
           <h2 class="card-label">Sammenfatning</h2>
@@ -53,7 +54,7 @@
         </article>
       </div>
 
-      <h2 class="section-title">De fem lag</h2>
+      <h2 class="section-title">De fem lag <span class="muted small">– klik på et lag for detaljer</span></h2>
       <div class="layers" id="layers"></div>
       <div id="layer-detail" class="card layer-detail" hidden></div>
 
@@ -69,6 +70,12 @@
         <div class="chart-box"><canvas id="chart-volume" aria-label="Tokenvolumen og estimeret forbrug, indekseret"></canvas></div>
         <div class="legend" id="legend-volume"></div>
         <p class="muted small chart-note" id="note-volume"></p>
+        <details class="howto">
+          <summary>Sådan læser du grafen</summary>
+          <p>Begge linjer starter på 100. Den blå viser, hvor mange tokens der behandles; den orange, hvad det anslået koster kunderne i dollar (tokens × listepris). Linjerne er på en logaritmisk akse, så lige store afstande betyder lige store procentvise ændringer.</p>
+          <p><strong>Afstanden mellem linjerne er det vigtigste:</strong> ligger volumen over forbrug, betaler kunderne mindre per token end før. Det er "token-deflation" – ikke faldende efterspørgsel. Reel svækkelse ville vise sig ved, at <em>volumen-linjen</em> flader ud eller falder.</p>
+          <p>En del af prisfaldet skyldes, at kunderne skifter til billigere modeller (mix-effekt); en anden del, at de samme modeller bliver sat ned i pris. Indikatoren "Token-prisindeks like-for-like" under laget Pris og monetisering viser kun den sidste del.</p>
+        </details>
         <div class="table-view" id="table-chart-volume" hidden></div>
       </article>
 
@@ -83,10 +90,17 @@
         <div class="chart-box"><canvas id="chart-gpu" aria-label="GPU-lejepriser per model over tid"></canvas></div>
         <div class="legend" id="legend-gpu"></div>
         <p class="muted small chart-note" id="note-gpu"></p>
+        <details class="howto">
+          <summary>Sådan læser du grafen</summary>
+          <p>Hver linje er en GPU-generation: H100 og H200 (Hopper, 2023–24) og B200 og B300 (Blackwell, 2025–26). Prisen er medianen af, hvad CoreWeave, Lambda, Nebius, Verda og RunPod tager per GPU-time uden binding.</p>
+          <p><strong>Stigende priser betyder stram kapacitet:</strong> udbyderne kan tage mere, fordi efterspørgslen overstiger udbuddet – selv mens der bygges massivt ud. Det er det stærkeste tegn på reel efterspørgsel. Faldende priser på ældre generationer er normalt (de bliver forældede); faldende priser på den nyeste generation er et advarselstegn.</p>
+          <p>Historikken før oktober 2026 kommer fra arkiverede kopier af udbydernes prissider (Internet Archive). Listepriser ændres sjældent, så kurven bevæger sig i trin.</p>
+        </details>
         <div class="table-view" id="table-chart-gpu" hidden></div>
       </article>
 
       <h2 class="section-title">Markedskontrol <span class="muted small">– påvirker ikke scoren</span></h2>
+      <p class="muted small section-intro">Hvordan har chipaktierne klaret sig mod det brede marked (SPY) de seneste 3 måneder? Sammenlignes med fundamentalscoren: hvis markedet er langt mere optimistisk eller pessimistisk end dataene, vises en divergens. Det kan pege på, at markedet er foran (eller bagud i forhold til) fundamentals.</p>
       <article class="card market" id="market"></article>
     </section>
 
@@ -96,6 +110,79 @@
         <h2 class="card-label">Manuelle kvartalstal</h2>
         <p class="muted small">Opdateres i <code>manual_inputs.yaml</code>. "Mangler" betyder, at selskabet har rapporteret en nyere periode (ifølge EDGAR), eller at serien er ældre end forventet.</p>
         <div class="table-scroll"><table class="data-table" id="manual-table"></table></div>
+      </article>
+    </section>
+
+    <!-- ===================== FORKLARING ===================== -->
+    <section id="panel-explain" role="tabpanel" aria-labelledby="tab-explain" hidden>
+      <article class="card prose">
+        <h2>Hvad dashboardet svarer på</h2>
+        <p>Overskrifterne om "faldende AI-efterspørgsel" handler oftest om, at <strong>prisen per token falder</strong> – ikke om, at der bruges mindre AI. Dashboardet adskiller derfor tre ting:</p>
+        <ul>
+          <li><strong>Volumen</strong> – bruges AI mere?</li>
+          <li><strong>Pris og monetisering</strong> – betaler kunderne mere?</li>
+          <li><strong>Kapacitetsknaphed</strong> – er compute stadig flaskehalsen?</li>
+        </ul>
+        <p>Hvis volumen vokser og compute er knap, mens prisen per token falder, er efterspørgslen intakt: AI bliver bare billigere. Først hvis volumen bremser <em>og</em> GPU-priserne falder, er der tale om reel svækkelse. Cloud-omsætning og capex bekræfter billedet fra de store kunder og leverandører.</p>
+      </article>
+
+      <article class="card prose" id="forklaring-health">
+        <h2>Sådan læser du AI Demand Health</h2>
+        <p>Tallet går fra 0 til 100. <strong>50 betyder, at indikatorerne ligger på deres normale niveau</strong> i forhold til deres egen historik det seneste år (kvartalstal: de seneste ca. 5 år). Det er altså et mål for, om efterspørgslen er stærkere eller svagere end <em>normalt</em> – ikke om den er høj eller lav i absolut forstand. Vokser OpenRouter 150 % om året, er 150 % "normalt"; først hvis væksten falder til 80 %, trækker det ned.</p>
+        <div class="bands">
+          <span><strong>65+</strong> Over normalt</span>
+          <span><strong>55–65</strong> Lidt over</span>
+          <span><strong>45–55</strong> Normalt</span>
+          <span><strong>35–45</strong> Lidt under</span>
+          <span><strong>&lt;35</strong> Under normalt</span>
+        </div>
+        <h3>Fra rådata til score</h3>
+        <ol>
+          <li><strong>z-score per indikator:</strong> hvor mange standardafvigelser er den seneste værdi fra gennemsnittet af de tidligere målinger? +1 er en tydeligt stærk måling, +2 er usædvanlig, ±3 er loftet. Kun data, der var offentligt kendt på datoen, bruges.</li>
+          <li><strong>Fortegn:</strong> for nogle indikatorer er en høj værdi dårlig (fx monetiseringsgabet). Fortegnet vendes, så positiv altid betyder "godt for efterspørgslen".</li>
+          <li><strong>Lagscore</strong> = vægtet gennemsnit af lagets indikatorer, mellem −3 og +3.</li>
+          <li><strong>Health</strong> = vægtet gennemsnit af lagene, omregnet til 0–100. Lag uden data udelades, og "Beregnet på X af 5 lag" viser dækningen.</li>
+        </ol>
+        <p>Indikatorer med for kort historik ("Opbygger historik") eller forældede data ("Forældet") indgår ikke. Forældede værdier fremskrives aldrig.</p>
+      </article>
+
+      <article class="card prose">
+        <h2>De fem lag</h2>
+        <div id="explain-layers"></div>
+      </article>
+
+      <article class="card prose">
+        <h2>Signaler</h2>
+        <p>Signalerne er faste regler, uafhængige af scoren. De slår kun til, når noget konkret og vigtigt sker. Tærsklerne kan justeres i <code>config.yaml</code>.</p>
+        <div id="explain-signals"></div>
+      </article>
+
+      <article class="card prose">
+        <h2>Ordliste</h2>
+        <dl class="glossary">
+          <dt>Token</dt><dd>Den enhed, sprogmodeller måler tekst i (ca. ¾ ord). Både input og output afregnes per million tokens.</dd>
+          <dt>Like-for-like / mix-effekt</dt><dd>Like-for-like sammenligner prisen på de samme modeller over tid. Mix-effekten er den del af prisfaldet, der skyldes, at kunderne skifter til billigere modeller.</dd>
+          <dt>On-demand / spot</dt><dd>On-demand er listeprisen for at leje en GPU uden binding. Spot er ledig kapacitet til lavere pris, som kan blive taget tilbage; spotprisen reagerer hurtigere på efterspørgslen.</dd>
+          <dt>Hopper / Blackwell</dt><dd>Nvidias GPU-generationer: H100/H200 (Hopper) og B200/B300 (Blackwell, nyeste).</dd>
+          <dt>Hyperscaler</dt><dd>De største cloududbydere: Microsoft (Azure), Alphabet (Google Cloud), Amazon (AWS), samt Meta og Oracle, der bygger tilsvarende.</dd>
+          <dt>Capex</dt><dd>Investeringer i anlæg – her primært datacentre, servere og GPU'er.</dd>
+          <dt>RPO / backlog</dt><dd>Remaining performance obligations: omsætning, kunderne har skrevet kontrakt på, men som endnu ikke er faktureret.</dd>
+          <dt>TTM</dt><dd>Trailing twelve months – summen af de seneste fire kvartaler.</dd>
+          <dt>Å/å og k/k</dt><dd>År over år (samme kvartal sidste år) og kvartal over kvartal.</dd>
+          <dt>z-score</dt><dd>Hvor usædvanlig en måling er: (værdi − gennemsnit) ÷ standardafvigelse af de tidligere målinger.</dd>
+        </dl>
+      </article>
+
+      <article class="card prose">
+        <h2>Datakilder og begrænsninger</h2>
+        <ul>
+          <li><strong>OpenRouter</strong> (tokenvolumen og modelpriser) er en mellemmand mellem udviklere og mange modeludbydere. Den er ikke repræsentativ for hele markedet og vokser også ved at vinde markedsandele – brug den som retningsgiver.</li>
+          <li><strong>GPU-priser</strong> er offentlige listepriser fra CoreWeave, Lambda, Nebius, Verda og RunPod. Store kunder betaler typisk mindre på langvarige aftaler.</li>
+          <li><strong>Regnskabstal</strong> kommer direkte fra SEC (amerikanske selskaber) og Taiwans børs (TSMC). Capex er ekskl. finansiel leasing og derfor lavere end overskrifterne.</li>
+          <li><strong>Manuelle input</strong> (fx Googles token-tal, labs' omsætning) har en kildehenvisning per tal; se fanen Manuelle input.</li>
+          <li><strong>Historik</strong> før oktober 2026 for GPU-priser og OpenRouter er hentet fra arkiverede kopier af siderne (Internet Archive).</li>
+        </ul>
+        <p class="muted small">Ikke investeringsrådgivning. Dashboardet viser data, ikke anbefalinger.</p>
       </article>
     </section>
 

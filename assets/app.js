@@ -224,7 +224,8 @@
         el("strong", {}, sg.title),
         el("span", { class: "sig-state" }, stateLabel),
         // "Utilstrækkelige data" står allerede i status-pillen; vis kun forklaringen
-        el("span", { class: "sig-detail" }, sg.active === null ? sg.detail.replace(/^Utilstrækkelige data\s*/, "").replace(/^\((.*)\)$/, "$1") || "–" : sg.detail));
+        el("span", { class: "sig-detail" }, sg.active === null ? sg.detail.replace(/^Utilstrækkelige data\s*/, "").replace(/^\((.*)\)$/, "$1") || "–" : sg.detail),
+        sg.explain ? el("details", { class: "sig-why" }, el("summary", {}, "Hvad betyder signalet?"), el("p", {}, sg.explain)) : null);
     });
     $("signals").replaceChildren(...items);
   }
@@ -243,6 +244,7 @@
         "aria-controls": "layer-detail", style: `--layer-color:${scoreColor(l.score)}`,
       },
         el("span", { class: "layer-name" }, l.name),
+        l.description ? el("span", { class: "layer-q" }, l.description.split("?")[0] + "?") : null,
         scoreEl,
         el("div", { class: "layer-spark", "aria-hidden": "true" }, sparkline(pts, { ref: 0, min: -3, max: 3, format: (v) => signed(v, 2) })),
         el("div", { class: "layer-cov" }, `${l.active}/${l.total} indikatorer aktive · vægt ${num(l.weight * 100, 0)} %`),
@@ -267,11 +269,15 @@
     const close = el("button", { class: "ghost-btn", type: "button" }, "Luk");
     close.addEventListener("click", () => { state.openLayer = null; renderLayers(); renderLayerDetail(); });
     const cards = l.indicators.map((id) => indicatorCard(id, s.indicators[id]));
+    const intro = el("div", { class: "detail-intro" },
+      l.description ? el("p", {}, l.description) : null,
+      l.reading ? el("p", { class: "muted small" }, l.reading) : null);
     box.replaceChildren(
       el("div", { class: "detail-head" },
         el("div", {}, el("h3", {}, l.name), el("p", { class: "muted small", style: "margin:2px 0 0" },
           l.score == null ? "Ingen aktive indikatorer endnu." : `Lagscore ${signed(l.score, 2)} (vægtet gennemsnit af fortegnsjusterede z-scorer, ±3)`)),
         close),
+      intro,
       el("div", { class: "ind-grid" }, cards));
     box.hidden = false;
     l.indicators.forEach((id) => drawIndicatorChart(id, s.indicators[id]));
@@ -292,6 +298,7 @@
         el("div", {}, el("span", { class: "k" }, "z-score"), el("span", { class: "v" }, ind.z == null ? "–" : signed(ind.z, 2))),
         el("div", {}, el("span", { class: "k" }, "Bidrag"), el("span", { class: "v" }, ind.contribution == null ? "–" : signed(ind.contribution, 2)))),
       ind.series.length > 1 ? el("div", { class: "ind-chart" }, el("canvas", { id: "ind-" + id, "aria-label": ind.name })) : null,
+      ind.explain ? el("p", { class: "ind-explain" }, ind.explain) : null,
       el("div", { class: "ind-meta" },
         reason ? el("p", {}, reason) : null,
         el("p", {}, `Fortegn ${ind.polarity > 0 ? "+1" : "−1"}: ${ind.polarity_note}`),
@@ -473,12 +480,19 @@
   function setupTabs() {
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
-      ["overview", "manual", "status"].forEach((t) => { $("panel-" + t).hidden = t !== b.dataset.tab; });
+      ["overview", "manual", "status", "explain"].forEach((t) => { $("panel-" + t).hidden = t !== b.dataset.tab; });
       try { sessionStorage.setItem("adm-tab", b.dataset.tab); } catch (e) { /* ignoreres */ }
     }));
     let saved = null;
     try { saved = sessionStorage.getItem("adm-tab"); } catch (e) { /* ignoreres */ }
     if (saved && $("tab-" + saved)) $("tab-" + saved).click();
+    // Links i teksten, der skifter fane (fx "Hvad betyder tallet?")
+    document.querySelectorAll("[data-goto]").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      $("tab-" + a.dataset.goto).click();
+      const target = document.querySelector(a.getAttribute("href"));
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }));
   }
 
   function setupTheme() {
@@ -505,10 +519,32 @@
     }));
   }
 
+  // ---------------------------------------------------------------- forklaring
+  function renderExplain() {
+    const s = state.scores;
+    const layers = LAYER_KEYS.filter((k) => s.layers[k]).map((k) => {
+      const l = s.layers[k];
+      const inds = l.indicators.map((id) => s.indicators[id]).map((ind) =>
+        el("li", {},
+          el("strong", {}, ind.name), " – ", ind.explain || "",
+          el("div", { class: "meta" },
+            `${ind.polarity > 0 ? "Højere er godt" : "Lavere er godt"}: ${ind.polarity_note} · Kilde: ${ind.source} · ` +
+            `${ind.scored === false ? "Indgår ikke i scoren (bruges af signal)" : "Vægt " + num(ind.weight, 1)} · Status: ${STATUS_LABEL[ind.status]}`)));
+      return el("div", { class: "explain-layer" },
+        el("h3", {}, l.name, el("span", { class: "muted" }, `vægt ${num(l.weight * 100, 0)} % af Health`)),
+        el("p", {}, l.description || ""),
+        el("p", { class: "muted small" }, l.reading || ""),
+        el("ul", { class: "explain-ind" }, inds));
+    });
+    $("explain-layers").replaceChildren(...layers);
+    $("explain-signals").replaceChildren(el("ul", { class: "explain-ind" }, s.signals.map((sg) =>
+      el("li", {}, el("strong", {}, `${sg.emoji} ${sg.title}`), " – ", sg.explain || ""))));
+  }
+
   function renderAll() {
     if (!state.scores) return;
     renderHeader(); renderHero(); renderSignals(); renderLayers(); renderLayerDetail();
-    renderVolumeChart(); renderGpuChart(); renderMarket(); renderManual(); renderStatus();
+    renderVolumeChart(); renderGpuChart(); renderMarket(); renderManual(); renderStatus(); renderExplain();
   }
 
   async function load(path) {

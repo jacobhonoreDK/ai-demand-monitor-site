@@ -201,3 +201,35 @@ main { padding-top: 20px; padding-bottom: 24px; }
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); max-width: 260px;
 }
 .tooltip strong { font-size: 14px; }
+
+/* ---------- forklaringer ---------- */
+.section-intro { margin: -6px 0 12px; max-width: 80ch; }
+.layer-q { font-size: 12px; color: var(--text-2); line-height: 1.35; }
+.layer-detail .detail-intro { margin: 0 0 14px; max-width: 90ch; }
+.layer-detail .detail-intro p { margin: 4px 0; }
+.ind-explain { font-size: 13px; color: var(--text); margin: 6px 0 2px; }
+.howto { margin-top: 10px; font-size: 13px; color: var(--text-2); }
+.howto summary, .sig-why summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+.howto p { margin: 6px 0; max-width: 90ch; }
+.sig-why { grid-column: 2 / -1; font-size: 13px; color: var(--text-2); }
+.sig-why p { margin: 4px 0 2px; }
+.prose { max-width: 100%; }
+.prose h2 { font-size: 17px; margin: 0 0 8px; }
+.prose h3 { font-size: 15px; margin: 16px 0 6px; }
+.prose p, .prose li, .prose dd { max-width: 90ch; }
+.prose ul, .prose ol { padding-left: 20px; margin: 8px 0; }
+.prose li { margin: 4px 0; }
+.bands { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.bands span { background: var(--surface-2); border-radius: 8px; padding: 4px 10px; font-size: 13px; }
+.explain-layer { border-top: 1px solid var(--grid); padding: 12px 0; }
+.explain-layer:first-child { border-top: 0; padding-top: 0; }
+.explain-layer h3 { margin: 0 0 4px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.explain-layer h3 .muted { font-weight: 400; font-size: 13px; }
+.explain-ind { margin: 6px 0 0; padding-left: 0; list-style: none; }
+.explain-ind li { margin: 8px 0; font-size: 14px; }
+.explain-ind .meta { font-size: 12px; color: var(--text-2); }
+.glossary { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
+.glossary dt { font-weight: 600; }
+.glossary dd { margin: 0; color: var(--text-2); }
+@media (max-width: 640px) { .glossary { grid-template-columns: 1fr; } .glossary dd { margin-bottom: 6px; } }
+.prose .explain-ind { padding-left: 0; }
