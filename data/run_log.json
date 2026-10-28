@@ -2,26 +2,26 @@
   "sources": {
     "openrouter_prices": {
       "source": "openrouter_prices",
-      "started_at": "2026-10-27T18:30:34+00:00",
+      "started_at": "2026-10-28T11:27:17+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_prices": {
-          "records": 456,
-          "added": 3,
-          "unchanged": 453
+          "records": 457,
+          "added": 455,
+          "unchanged": 2
         },
         "openrouter_price_snapshots": {
           "records": 1,
-          "added": 0,
-          "unchanged": 1
+          "added": 1,
+          "unchanged": 0
         }
       },
       "warnings": [],
-      "duration_s": 0.1
+      "duration_s": 0.2
     },
     "twse": {
       "source": "twse",
-      "started_at": "2026-10-27T18:30:34+00:00",
+      "started_at": "2026-10-28T11:27:17+00:00",
       "status": "ok",
       "datasets": {
         "twse_monthly_revenue": {
@@ -31,11 +31,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 2.5
+      "duration_s": 1.5
     },
     "markets": {
       "source": "markets",
-      "started_at": "2026-10-27T18:30:37+00:00",
+      "started_at": "2026-10-28T11:27:18+00:00",
       "status": "ok",
       "datasets": {
         "market_prices": {
@@ -45,7 +45,7 @@
         }
       },
       "warnings": [],
-      "duration_s": 1.7
+      "duration_s": 1.4
     },
     "openrouter_volume": {
       "source": "openrouter_volume",
@@ -126,24 +126,22 @@
     }
   },
   "last_run": {
-    "at": "2026-10-27T19:25:07+00:00",
-    "schedule": "weekly",
+    "at": "2026-10-28T11:27:20+00:00",
+    "schedule": "daily",
     "sources": [
-      "openrouter_volume",
-      "gpu_prices",
-      "edgar",
-      "edgar_releases",
-      "fmp"
+      "openrouter_prices",
+      "twse",
+      "markets"
     ]
   },
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-10-27T19:34:37+00:00"
+      "at": "2026-10-28T11:27:20+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-10-27T19:34:39+00:00"
+      "at": "2026-10-28T11:27:21+00:00"
     }
   }
 }
