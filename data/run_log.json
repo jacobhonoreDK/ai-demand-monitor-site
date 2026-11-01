@@ -2,13 +2,13 @@
   "sources": {
     "openrouter_prices": {
       "source": "openrouter_prices",
-      "started_at": "2026-10-31T11:00:11+00:00",
+      "started_at": "2026-11-01T11:55:44+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_prices": {
-          "records": 449,
-          "added": 16,
-          "unchanged": 433
+          "records": 445,
+          "added": 10,
+          "unchanged": 435
         },
         "openrouter_price_snapshots": {
           "records": 1,
@@ -21,7 +21,7 @@
     },
     "twse": {
       "source": "twse",
-      "started_at": "2026-10-31T11:00:11+00:00",
+      "started_at": "2026-11-01T11:55:44+00:00",
       "status": "ok",
       "datasets": {
         "twse_monthly_revenue": {
@@ -31,21 +31,21 @@
         }
       },
       "warnings": [],
-      "duration_s": 1.4
+      "duration_s": 1.8
     },
     "markets": {
       "source": "markets",
-      "started_at": "2026-10-31T11:00:12+00:00",
+      "started_at": "2026-11-01T11:55:46+00:00",
       "status": "ok",
       "datasets": {
         "market_prices": {
           "records": 115,
-          "added": 5,
-          "unchanged": 110
+          "added": 0,
+          "unchanged": 115
         }
       },
       "warnings": [],
-      "duration_s": 1.9
+      "duration_s": 1.8
     },
     "openrouter_volume": {
       "source": "openrouter_volume",
@@ -126,7 +126,7 @@
     }
   },
   "last_run": {
-    "at": "2026-10-31T11:00:14+00:00",
+    "at": "2026-11-01T11:55:48+00:00",
     "schedule": "daily",
     "sources": [
       "openrouter_prices",
@@ -137,11 +137,11 @@
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-10-31T11:00:14+00:00"
+      "at": "2026-11-01T11:55:48+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-10-31T11:00:15+00:00"
+      "at": "2026-11-01T11:55:49+00:00"
     }
   }
 }
