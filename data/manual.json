@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T11:55:48+00:00",
+  "generated_at": "2026-11-02T13:41:46+00:00",
   "series": {
     "google_tokens_per_month": {
       "layer": 1,
@@ -62,8 +62,8 @@
       ],
       "status": {
         "latest": "2026-06-30",
-        "due": false,
-        "reason": null
+        "due": true,
+        "reason": "GOOGL har rapporteret periode til 2026-09-30"
       }
     },
     "openai_annualized_revenue": {
@@ -261,7 +261,7 @@
       "status": {
         "latest": "2026-03-31",
         "due": true,
-        "reason": "215 dage gammel (> 200)"
+        "reason": "216 dage gammel (> 200)"
       }
     },
     "google_cloud_revenue": {
@@ -369,8 +369,8 @@
       ],
       "status": {
         "latest": "2026-06-30",
-        "due": false,
-        "reason": null
+        "due": true,
+        "reason": "AMZN har rapporteret periode til 2026-09-30"
       }
     },
     "oracle_oci_revenue": {
@@ -559,13 +559,13 @@
         "per_company": {
           "AMZN": {
             "latest": "2026-06-30",
-            "due": false,
-            "reason": null
+            "due": true,
+            "reason": "EDGAR har 2026-09-30"
           },
           "GOOGL": {
             "latest": "2026-06-30",
-            "due": false,
-            "reason": null
+            "due": true,
+            "reason": "EDGAR har 2026-09-30"
           },
           "META": {
             "latest": "2026-09-30",
@@ -574,8 +574,8 @@
           },
           "MSFT": {
             "latest": "2026-06-30",
-            "due": false,
-            "reason": null
+            "due": true,
+            "reason": "EDGAR har 2026-09-30"
           },
           "ORCL": {
             "latest": "2026-08-31",
@@ -583,7 +583,7 @@
             "reason": null
           }
         },
-        "due": false
+        "due": true
       }
     },
     "tsmc_hpc_share_pct": {
@@ -865,7 +865,7 @@
       "status": {
         "latest": "2026-06-30",
         "due": true,
-        "reason": "124 dage gammel (> 100)"
+        "reason": "125 dage gammel (> 100)"
       }
     }
   }
