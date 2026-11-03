@@ -2,13 +2,13 @@
   "sources": {
     "openrouter_prices": {
       "source": "openrouter_prices",
-      "started_at": "2026-11-02T13:41:39+00:00",
+      "started_at": "2026-11-03T12:54:55+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_prices": {
-          "records": 443,
-          "added": 4,
-          "unchanged": 439
+          "records": 444,
+          "added": 13,
+          "unchanged": 431
         },
         "openrouter_price_snapshots": {
           "records": 1,
@@ -17,11 +17,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.2
+      "duration_s": 0.1
     },
     "twse": {
       "source": "twse",
-      "started_at": "2026-11-02T13:41:40+00:00",
+      "started_at": "2026-11-03T12:54:55+00:00",
       "status": "ok",
       "datasets": {
         "twse_monthly_revenue": {
@@ -31,21 +31,21 @@
         }
       },
       "warnings": [],
-      "duration_s": 1.8
+      "duration_s": 2.1
     },
     "markets": {
       "source": "markets",
-      "started_at": "2026-11-02T13:41:41+00:00",
+      "started_at": "2026-11-03T12:54:57+00:00",
       "status": "ok",
       "datasets": {
         "market_prices": {
-          "records": 115,
-          "added": 0,
-          "unchanged": 115
+          "records": 105,
+          "added": 5,
+          "unchanged": 100
         }
       },
       "warnings": [],
-      "duration_s": 1.9
+      "duration_s": 1.7
     },
     "openrouter_volume": {
       "source": "openrouter_volume",
@@ -128,27 +128,22 @@
     }
   },
   "last_run": {
-    "at": "2026-11-02T13:41:46+00:00",
-    "schedule": "all",
+    "at": "2026-11-03T12:54:59+00:00",
+    "schedule": "daily",
     "sources": [
       "openrouter_prices",
       "twse",
-      "markets",
-      "openrouter_volume",
-      "gpu_prices",
-      "edgar",
-      "edgar_releases",
-      "fmp"
+      "markets"
     ]
   },
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-11-02T13:41:46+00:00"
+      "at": "2026-11-03T12:54:59+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-11-02T13:41:47+00:00"
+      "at": "2026-11-03T12:55:00+00:00"
     }
   }
 }
