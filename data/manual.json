@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T13:08:19+00:00",
+  "generated_at": "2026-11-05T13:21:54+00:00",
   "series": {
     "google_tokens_per_month": {
       "layer": 1,
@@ -261,7 +261,7 @@
       "status": {
         "latest": "2026-03-31",
         "due": true,
-        "reason": "218 dage gammel (> 200)"
+        "reason": "219 dage gammel (> 200)"
       }
     },
     "google_cloud_revenue": {
@@ -865,7 +865,7 @@
       "status": {
         "latest": "2026-06-30",
         "due": true,
-        "reason": "127 dage gammel (> 100)"
+        "reason": "128 dage gammel (> 100)"
       }
     }
   }
