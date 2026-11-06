@@ -2,18 +2,18 @@
   "sources": {
     "openrouter_prices": {
       "source": "openrouter_prices",
-      "started_at": "2026-11-06T13:04:44+00:00",
+      "started_at": "2026-11-06T15:39:40+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_prices": {
           "records": 445,
-          "added": 17,
-          "unchanged": 428
+          "added": 6,
+          "unchanged": 439
         },
         "openrouter_price_snapshots": {
           "records": 1,
-          "added": 1,
-          "unchanged": 0
+          "added": 0,
+          "unchanged": 1
         }
       },
       "warnings": [],
@@ -21,7 +21,7 @@
     },
     "twse": {
       "source": "twse",
-      "started_at": "2026-11-06T13:04:44+00:00",
+      "started_at": "2026-11-06T15:39:40+00:00",
       "status": "ok",
       "datasets": {
         "twse_monthly_revenue": {
@@ -35,13 +35,13 @@
     },
     "markets": {
       "source": "markets",
-      "started_at": "2026-11-06T13:04:45+00:00",
+      "started_at": "2026-11-06T15:39:42+00:00",
       "status": "ok",
       "datasets": {
         "market_prices": {
-          "records": 115,
+          "records": 120,
           "added": 5,
-          "unchanged": 110
+          "unchanged": 115
         }
       },
       "warnings": [],
@@ -49,31 +49,31 @@
     },
     "openrouter_volume": {
       "source": "openrouter_volume",
-      "started_at": "2026-11-02T13:41:43+00:00",
+      "started_at": "2026-11-06T15:39:44+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_volume_by_author": {
-          "records": 520,
-          "added": 10,
+          "records": 510,
+          "added": 0,
           "unchanged": 510
         },
         "openrouter_volume_by_model": {
-          "records": 672,
-          "added": 672,
+          "records": 675,
+          "added": 675,
           "unchanged": 0
         }
       },
       "warnings": [],
-      "duration_s": 0.2
+      "duration_s": 0.3
     },
     "gpu_prices": {
       "source": "gpu_prices",
-      "started_at": "2026-11-02T13:41:44+00:00",
+      "started_at": "2026-11-06T15:39:44+00:00",
       "status": "warning",
       "datasets": {
         "gpu_prices": {
-          "records": 56,
-          "added": 56,
+          "records": 54,
+          "added": 54,
           "unchanged": 0
         }
       },
@@ -81,11 +81,11 @@
         "forkastet runpod H200 community (H200 NVL): 0.5 uden for [0.8, 18.0]",
         "vast: VAST_API_KEY ikke sat – Vast.ai springes over"
       ],
-      "duration_s": 1.6
+      "duration_s": 2.7
     },
     "edgar": {
       "source": "edgar",
-      "started_at": "2026-11-06T15:28:52+00:00",
+      "started_at": "2026-11-06T15:39:47+00:00",
       "status": "ok",
       "datasets": {
         "edgar_quarterly": {
@@ -100,11 +100,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 2.3
+      "duration_s": 1.0
     },
     "fmp": {
       "source": "fmp",
-      "started_at": "2026-11-02T13:41:46+00:00",
+      "started_at": "2026-11-06T15:39:48+00:00",
       "status": "skipped",
       "error": "FMP_API_KEY ikke sat – FMP springes over",
       "warnings": [],
@@ -112,61 +112,61 @@
     },
     "edgar_releases": {
       "source": "edgar_releases",
-      "started_at": "2026-11-06T15:29:30+00:00",
-      "status": "warning",
-      "datasets": {
-        "cloud_releases": {
-          "records": 86,
-          "added": 5,
-          "unchanged": 81
-        },
-        "release_index": {
-          "records": 115,
-          "added": 115,
-          "unchanged": 0
-        }
-      },
-      "warnings": [
-        "META 2024-10-30: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1326801/000132680124000077/meta-09302024xexhibit991.htm",
-        "META 2024-07-31: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1326801/000132680124000065/meta-06302024xexhibit991.htm",
-        "NVDA 2024-02-21: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581024000028/q4fy24pr.htm",
-        "NVDA 2023-11-21: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000225/q3fy24pr.htm",
-        "NVDA 2023-08-23: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000171/q2fy24pr.htm",
-        "NVDA 2023-05-24: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000087/q1fy24pr.htm",
-        "NVDA 2023-02-22: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000014/q4fy23pr.htm"
-      ],
-      "duration_s": 10.2
-    },
-    "silicondata": {
-      "source": "silicondata",
-      "started_at": "2026-11-06T15:32:23+00:00",
+      "started_at": "2026-11-06T15:39:48+00:00",
       "status": "ok",
       "datasets": {
-        "sdllmtk_daily": {
-          "records": 8,
-          "added": 8,
+        "cloud_releases": {
+          "records": 0,
+          "added": 0,
+          "unchanged": 0
+        },
+        "release_index": {
+          "records": 0,
+          "added": 0,
           "unchanged": 0
         }
       },
       "warnings": [],
-      "duration_s": 0.5
+      "duration_s": 0.2
+    },
+    "silicondata": {
+      "source": "silicondata",
+      "started_at": "2026-11-06T15:39:44+00:00",
+      "status": "ok",
+      "datasets": {
+        "sdllmtk_daily": {
+          "records": 8,
+          "added": 0,
+          "unchanged": 8
+        }
+      },
+      "warnings": [],
+      "duration_s": 0.3
     }
   },
   "last_run": {
-    "at": "2026-11-06T15:32:24+00:00",
+    "at": "2026-11-06T15:39:48+00:00",
     "schedule": "all",
     "sources": [
-      "silicondata"
+      "openrouter_prices",
+      "twse",
+      "markets",
+      "silicondata",
+      "openrouter_volume",
+      "gpu_prices",
+      "edgar",
+      "edgar_releases",
+      "fmp"
     ]
   },
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-11-06T15:39:05+00:00"
+      "at": "2026-11-06T15:39:48+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-11-06T15:39:05+00:00"
+      "at": "2026-11-06T15:39:49+00:00"
     }
   }
 }
