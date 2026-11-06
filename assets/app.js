@@ -403,7 +403,7 @@
         `(relativ styrke mod egen 52-ugers historik) mod fundamental z-score ${m.fundamental_z == null ? "–" : signed(m.fundamental_z, 2)}.`));
   }
 
-  // ---------------------------------------------------------------- manuelle input
+  // ---------------------------------------------------------------- kvartalstal
   function renderManual() {
     const m = state.manual;
     const tbl = $("manual-table");
@@ -415,25 +415,38 @@
       const pts = s.points || [];
       const last = pts[pts.length - 1];
       if (s.status.due) due++;
+      let val = "–";
+      if (last && s.kind === "guidance") {
+        // seneste udmelding per selskab
+        const per = {};
+        pts.forEach((p) => { per[p.company] = p; });
+        const lp = String(last.period_end).slice(0, 10);
+        const cutoff = (Number(lp.slice(0, 4)) - 1) + lp.slice(4);  // kun udmeldinger fra det seneste år
+        val = Object.values(per).filter((p) => String(p.period_end).slice(0, 10) >= cutoff).map((p) =>
+          el("div", {}, `${p.company} ${p.low != null && p.high != null && p.low !== p.high ? num(p.low / 1e9, 0) + "–" + num(p.high / 1e9, 0) : num(p.value / 1e9, 0)} mia. USD`));
+      } else if (last) {
+        val = compact(last.value, s.unit);
+      }
+      const kind = !last ? "–" : last.auto ? "automatisk" : "manuel (historik)";
       const src = last && /^https?:\/\//.test(last.source) ? el("a", { href: last.source, target: "_blank", rel: "noopener noreferrer" }, "kilde") : "–";
-      const val = !last ? "–" : s.kind === "guidance" ? `${last.company} ${compact(last.value, s.unit)}` : compact(last.value, s.unit);
+      const label = s.status.due ? "⚠ Halter" : s.static ? "✓ Fast historik" : s.auto ? "✓ Automatisk" : "✓ Opdateret";
+      const title = s.description.split(/ – |\. /)[0];  // kort titel; fuld beskrivelse i tooltip
       return el("tr", { class: s.status.due ? "due" : null },
-        el("td", {}, el("strong", {}, s.description), el("div", { class: "muted small" }, key)),
-        el("td", {}, layerName(s.layer)),
-        el("td", { class: "num" }, last ? fmtDate(last.period_end) : "–"),
+        el("td", { class: "series-cell", title: s.description }, el("strong", {}, title),
+          el("div", { class: "muted small" }, `${layerName(s.layer)} · ${s.automated_by || key}`)),
+        el("td", { class: "num" }, last ? fmtDate(String(last.period_end).slice(0, 10)) : "–"),
         el("td", { class: "num" }, val),
-        el("td", {}, last && last.confidence ? last.confidence : "–"),
-        el("td", {}, src),
-        el("td", {}, el("span", { class: "status-pill" }, s.status.due ? "⚠ Mangler" : "✓ Opdateret"),
-          s.status.reason ? el("div", { class: "muted small" }, s.status.reason) : null));
+        el("td", {}, el("span", { class: "status-pill" }, label),
+          el("div", { class: "muted small" }, last && !last.auto ? kind + " · " : "", src),
+          s.status.due && s.status.reason ? el("div", { class: "muted small" }, s.status.reason) : null));
     });
     tbl.replaceChildren(
-      el("thead", {}, el("tr", {}, ["Serie", "Lag", "Seneste periode", "Seneste værdi", "Sikkerhed", "Kilde", "Status"].map((h) => el("th", {}, h)))),
+      el("thead", {}, el("tr", {}, ["Serie", "Seneste periode", "Seneste værdi", "Status og kilde"].map((h) => el("th", {}, h)))),
       el("tbody", {}, body));
     const b = $("manual-badge");
     b.hidden = due === 0;
     b.textContent = due;
-    b.title = `${due} serier mangler opdatering`;
+    b.title = `${due} serier halter efter seneste regnskab`;
   }
 
   // ---------------------------------------------------------------- datastatus

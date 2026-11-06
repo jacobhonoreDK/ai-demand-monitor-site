@@ -1,163 +1,84 @@
 {
-  "generated_at": "2026-11-06T13:04:47+00:00",
+  "generated_at": "2026-11-06T15:39:05+00:00",
   "series": {
-    "google_tokens_per_month": {
-      "layer": 1,
-      "description": "Googles samlede tokens per måned på tværs af produkter og API",
-      "unit": "tokens/måned",
-      "expected_every_days": 400,
-      "points": [
-        {
-          "period_end": "2025-05-31",
-          "value": 480000000000000.0,
-          "published": "2026-05-19",
-          "confidence": "primary",
-          "source": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-          "note": "'Last year at I/O, that grew to roughly 480 trillion tokens'"
-        },
-        {
-          "period_end": "2026-05-31",
-          "value": 3200000000000000.0,
-          "published": "2026-05-19",
-          "confidence": "primary",
-          "source": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-          "note": "'jumped 7x to over 3.2 quadrillion per month'"
-        }
-      ],
-      "status": {
-        "latest": "2026-05-31",
-        "due": false,
-        "reason": null
-      }
-    },
     "google_api_tokens_per_minute": {
       "layer": 1,
+      "automated_by": "SEC earnings releases (Alphabet)",
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "description": "Tokens per minut via Googles model-API'er (direkte kundebrug) – bedste kvartalsvise volumenserie fra en lab",
       "unit": "tokens/minut",
       "company": "GOOGL",
       "points": [
         {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2025-09-30",
+          "published": "2025-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000087/googexhibit991q32025.htm",
+          "metric": "google_api_tokens_per_minute",
+          "value": 7000000000.0,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
           "period_end": "2025-12-31",
+          "published": "2026-02-04",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm",
+          "metric": "google_api_tokens_per_minute",
           "value": 10000000000.0,
-          "published": "2026-04-29",
-          "confidence": "primary",
-          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/",
-          "note": "'up from 10 billion last quarter'"
+          "auto": true
         },
         {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
           "period_end": "2026-03-31",
-          "value": 16000000000.0,
           "published": "2026-04-29",
-          "confidence": "primary",
-          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/"
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm",
+          "metric": "google_api_tokens_per_minute",
+          "value": 16000000000.0,
+          "auto": true
         },
         {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
           "period_end": "2026-06-30",
-          "value": 22000000000.0,
           "published": "2026-07-22",
-          "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000066/googexhibit991q22026.htm",
-          "note": "'Gemini models now process 22 billion API tokens per minute'"
-        }
-      ],
-      "status": {
-        "latest": "2026-06-30",
-        "due": true,
-        "reason": "GOOGL har rapporteret periode til 2026-09-30"
-      }
-    },
-    "openai_annualized_revenue": {
-      "layer": 2,
-      "description": "OpenAI annualiseret omsætning (run-rate). OpenAI medregner kun egen andel af partnersalg",
-      "unit": "USD",
-      "expected_every_days": 60,
-      "points": [
-        {
-          "period_end": "2026-02-28",
-          "value": 25000000000.0,
-          "confidence": "estimate",
-          "source": "https://www.techloy.com/openai-hits-25-billion-in-annualized-revenue-while-anthropic-surges-to-19-billion/",
-          "note": "The Information"
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+          "metric": "google_api_tokens_per_minute",
+          "value": 22000000000.0,
+          "auto": true
         },
         {
-          "period_end": "2026-10-08",
-          "value": 50000000000.0,
-          "published": "2026-10-08",
-          "confidence": "estimate",
-          "source": "https://news.bgov.com/artificial-intelligence/openais-annualized-revenue-nears-50-billion-ft-says",
-          "note": "FT: 'nears $50bn'. Axios meldte ~70 mia. i sep. – modstridende. OpenAI har ingen officielle run-rate-tal"
-        }
-      ],
-      "status": {
-        "latest": "2026-10-08",
-        "due": false,
-        "reason": null
-      }
-    },
-    "anthropic_annualized_revenue": {
-      "layer": 2,
-      "description": "Anthropic annualiseret omsætning (run-rate). Medregner bruttoværdi af noget salg via fx AWS",
-      "unit": "USD",
-      "expected_every_days": 60,
-      "points": [
-        {
-          "period_end": "2025-12-31",
-          "value": 9000000000.0,
-          "published": "2026-04-06",
-          "confidence": "primary",
-          "source": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
-        },
-        {
-          "period_end": "2026-02-12",
-          "value": 14000000000.0,
-          "published": "2026-02-12",
-          "confidence": "primary",
-          "source": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
-        },
-        {
-          "period_end": "2026-04-06",
-          "value": 30000000000.0,
-          "published": "2026-04-06",
-          "confidence": "primary",
-          "source": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
-          "note": "'surpassed $30 billion'"
-        },
-        {
-          "period_end": "2026-05-28",
-          "value": 47000000000.0,
-          "published": "2026-05-28",
-          "confidence": "primary",
-          "source": "https://www.anthropic.com/news/series-h",
-          "note": "'crossed $47 billion earlier this month'"
-        },
-        {
-          "period_end": "2026-07-31",
-          "value": 65000000000.0,
-          "published": "2026-08-17",
-          "confidence": "estimate",
-          "source": "https://www.axios.com/2026/08/17/anthropic-revenue-run-rate-ipo-openai",
-          "note": "Bloomberg/Axios, tal delt med investorer"
-        },
-        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
           "period_end": "2026-09-30",
-          "value": 67200000000.0,
-          "published": "2026-10-14",
-          "confidence": "estimate",
-          "source": "https://www.forbes.com/sites/ronschmelzer/2026/10/26/anthropic-ipo-ai-boom-valuation-risks/",
-          "note": "Q3-omsætning 16,8 mia. × 4 (Reuters/FT, oplyst til investorer). Kvartalsomsætning, ikke månedlig run-rate"
+          "published": "2026-10-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+          "metric": "google_api_tokens_per_minute",
+          "value": 32000000000.0,
+          "auto": true
         }
       ],
       "status": {
         "latest": "2026-09-30",
         "due": false,
-        "reason": null
+        "auto": true,
+        "reason": "Automatisk: SEC earnings releases (Alphabet)"
       }
     },
     "sdllmtk_usd_per_mtok": {
       "layer": 2,
+      "automated_by": "Silicon Data indeksside (dagligt)",
+      "auto": {
+        "dataset": "sdllmtk_daily",
+        "bucket": "day"
+      },
       "description": "Silicon Data LLM Token Expenditure Index (Bloomberg SDLLMTK), USD per 1M tokens, forbrugsvægtet",
       "unit": "USD/1M tokens",
-      "expected_every_days": 14,
+      "expected_every_days": 10,
       "points": [
         {
           "period_end": "2025-12-31",
@@ -174,11 +95,68 @@
           "note": "Top i maj 2026"
         },
         {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-08-22",
+          "value": 1.04,
+          "published": "2026-08-22",
+          "source": "https://web.archive.org/web/20260824101502id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
           "period_end": "2026-08-31",
           "value": 0.97,
-          "confidence": "secondary",
-          "source": "https://www.digitaltoday.co.kr/en/view/98935/ai-token-price-index-hits-record-low-amid-intensifying-competition",
-          "note": "Rekordlav ifølge CNBC"
+          "published": "2026-08-31",
+          "source": "https://web.archive.org/web/20260901202917id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-09-09",
+          "value": 1.08,
+          "published": "2026-09-09",
+          "source": "https://web.archive.org/web/20260911072009id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-09-19",
+          "value": 1.01,
+          "published": "2026-09-19",
+          "source": "https://web.archive.org/web/20260920225623id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-09-22",
+          "value": 0.96,
+          "published": "2026-09-22",
+          "source": "https://web.archive.org/web/20260924105416id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-09",
+          "value": 0.98,
+          "published": "2026-10-09",
+          "source": "https://web.archive.org/web/20261010130217id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-15",
+          "value": 0.98,
+          "published": "2026-10-15",
+          "source": "https://web.archive.org/web/20261017014438id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-23",
+          "value": 0.93,
+          "published": "2026-10-23",
+          "source": "https://web.archive.org/web/20261024234531id_/https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
         },
         {
           "period_end": "2026-10-25",
@@ -186,265 +164,1764 @@
           "confidence": "primary",
           "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
           "note": "+1,0 % over 7 dage"
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-28",
+          "value": 0.9141,
+          "published": "2026-10-28",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-29",
+          "value": 0.906,
+          "published": "2026-10-29",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-30",
+          "value": 0.8946,
+          "published": "2026-10-30",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-10-31",
+          "value": 0.8856,
+          "published": "2026-10-31",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-11-01",
+          "value": 0.8875,
+          "published": "2026-11-01",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-11-02",
+          "value": 0.8847,
+          "published": "2026-11-02",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-11-03",
+          "value": 0.8733,
+          "published": "2026-11-03",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-11-04",
+          "value": 0.8618,
+          "published": "2026-11-04",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-10-25",
+        "latest": "2026-11-04",
         "due": false,
-        "reason": null
+        "auto": true,
+        "reason": "Automatisk: Silicon Data indeksside (dagligt)"
       }
     },
     "azure_growth_cc_pct": {
       "layer": 4,
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "Azure og andre cloud-tjenester, vækst å/å i faste valutakurser",
       "unit": "pct",
       "company": "MSFT",
       "points": [
         {
-          "period_end": "2026-03-31",
-          "value": 39,
-          "confidence": "primary",
-          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3"
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2022-12-31",
+          "published": "2023-01-24",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523014230/d406070dex991.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 38.0,
+          "growth_pct": 38.0,
+          "growth_usd_pct": 31.0,
+          "auto": true
         },
         {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2023-03-31",
+          "published": "2023-04-25",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523115280/d321368dex991.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 31.0,
+          "growth_pct": 31.0,
+          "growth_usd_pct": 27.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2023-06-30",
+          "published": "2023-07-25",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017023034400/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 27.0,
+          "growth_pct": 27.0,
+          "growth_usd_pct": 26.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2023-09-30",
+          "published": "2023-10-24",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017023054848/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 28.0,
+          "growth_pct": 28.0,
+          "growth_usd_pct": 29.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2023-12-31",
+          "published": "2024-01-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017024008809/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 28.0,
+          "growth_pct": 28.0,
+          "growth_usd_pct": 30.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2024-03-31",
+          "published": "2024-04-25",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048268/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 31.0,
+          "growth_pct": 31.0,
+          "growth_usd_pct": 31.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2024-06-30",
+          "published": "2024-07-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087835/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 30.0,
+          "growth_pct": 30.0,
+          "growth_usd_pct": 29.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2024-09-30",
+          "published": "2024-10-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017024118955/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 34.0,
+          "growth_pct": 34.0,
+          "growth_usd_pct": 33.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2024-12-31",
+          "published": "2025-01-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010484/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 31.0,
+          "growth_pct": 31.0,
+          "growth_usd_pct": 31.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2025-03-31",
+          "published": "2025-04-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061032/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 35.0,
+          "growth_pct": 35.0,
+          "growth_usd_pct": 33.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2025-06-30",
+          "published": "2025-07-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 39.0,
+          "growth_pct": 39.0,
+          "growth_usd_pct": 39.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2025-09-30",
+          "published": "2025-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 39.0,
+          "growth_pct": 39.0,
+          "growth_usd_pct": 40.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2025-12-31",
+          "published": "2026-01-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 38.0,
+          "growth_pct": 38.0,
+          "growth_usd_pct": 39.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2026-03-31",
+          "published": "2026-04-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 39.0,
+          "growth_pct": 39.0,
+          "growth_usd_pct": 40.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
           "period_end": "2026-06-30",
-          "value": 43,
           "published": "2026-07-29",
-          "confidence": "primary",
-          "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
-          "note": "Guidance for kvartal til 2026-09-30: ca. 45 % (CFO på kaldet)"
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 43.0,
+          "growth_pct": 43.0,
+          "growth_usd_pct": 43.0,
+          "auto": true
+        },
+        {
+          "ticker": "MSFT",
+          "company": "MSFT",
+          "period_end": "2026-09-30",
+          "published": "2026-10-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm",
+          "metric": "azure_growth_cc_pct",
+          "value": 48.0,
+          "growth_pct": 48.0,
+          "growth_usd_pct": 48.0,
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-06-30",
+        "latest": "2026-09-30",
         "due": false,
-        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
+        "auto": true,
+        "reason": "Automatisk: SEC earnings releases (cloud_releases)"
       }
     },
     "msft_commercial_rpo": {
       "layer": 4,
+      "auto": {
+        "dataset": "edgar_quarterly",
+        "metric": "rpo",
+        "ticker": "MSFT"
+      },
       "automated_by": "SEC EDGAR RPO (edgar_quarterly)",
       "description": "Microsoft commercial remaining performance obligation",
       "unit": "USD",
       "company": "MSFT",
       "points": [
         {
-          "period_end": "2026-06-30",
-          "value": 678000000000.0,
-          "published": "2026-07-29",
-          "confidence": "primary",
-          "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
-          "note": "+84 % å/å"
-        }
-      ],
-      "status": {
-        "latest": "2026-06-30",
-        "due": false,
-        "reason": "Opdateres automatisk (SEC EDGAR RPO (edgar_quarterly))"
-      }
-    },
-    "microsoft_ai_run_rate": {
-      "layer": 4,
-      "description": "Microsoft AI-forretning, annualiseret omsætning (oplyses uregelmæssigt)",
-      "unit": "USD",
-      "expected_every_days": 200,
-      "points": [
+          "period_end": "2017-09-30",
+          "value": 59000000000.0,
+          "published": "2017-10-26",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2017-12-31",
+          "value": 61000000000.0,
+          "published": "2018-01-31",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2018-03-31",
+          "value": 61000000000.0,
+          "published": "2018-04-26",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2018-06-30",
+          "value": 73000000000.0,
+          "published": "2018-08-03",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2018-09-30",
+          "value": 71000000000.0,
+          "published": "2018-10-24",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2018-12-31",
+          "value": 72000000000.0,
+          "published": "2019-01-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-03-31",
+          "value": 75000000000.0,
+          "published": "2019-04-24",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-06-30",
+          "value": 91000000000.0,
+          "published": "2019-08-01",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-09-30",
+          "value": 89000000000.0,
+          "published": "2019-10-23",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-12-31",
+          "value": 93000000000.0,
+          "published": "2020-01-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-03-31",
+          "value": 93000000000.0,
+          "published": "2020-04-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-06-30",
+          "value": 111000000000.0,
+          "published": "2020-07-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-09-30",
+          "value": 111000000000.0,
+          "published": "2020-10-27",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-12-31",
+          "value": 117000000000.0,
+          "published": "2021-01-26",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-03-31",
+          "value": 121000000000.0,
+          "published": "2021-04-27",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-06-30",
+          "value": 146000000000.0,
+          "published": "2021-07-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-09-30",
+          "value": 142000000000.0,
+          "published": "2021-10-26",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-12-31",
+          "value": 152000000000.0,
+          "published": "2022-01-25",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-03-31",
+          "value": 160000000000.0,
+          "published": "2022-04-26",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-06-30",
+          "value": 193000000000.0,
+          "published": "2022-07-28",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-09-30",
+          "value": 183000000000.0,
+          "published": "2022-10-25",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-12-31",
+          "value": 193000000000.0,
+          "published": "2023-01-24",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-03-31",
+          "value": 201000000000.0,
+          "published": "2023-04-25",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-06-30",
+          "value": 229000000000.0,
+          "published": "2023-07-27",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-09-30",
+          "value": 216000000000.0,
+          "published": "2023-10-24",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-12-31",
+          "value": 229000000000.0,
+          "published": "2024-01-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-03-31",
+          "value": 242000000000.0,
+          "published": "2024-04-25",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-06-30",
+          "value": 275000000000.0,
+          "published": "2024-07-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-09-30",
+          "value": 266000000000.0,
+          "published": "2024-10-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-12-31",
+          "value": 304000000000.0,
+          "published": "2025-01-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-03-31",
+          "value": 321000000000.0,
+          "published": "2025-04-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-06-30",
+          "value": 375000000000.0,
+          "published": "2025-07-30",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-09-30",
+          "value": 398000000000.0,
+          "published": "2025-10-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-12-31",
+          "value": 631000000000.0,
+          "published": "2026-01-28",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
         {
           "period_end": "2026-03-31",
-          "value": 37000000000.0,
-          "confidence": "primary",
-          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
-          "note": "'surpassed $37 billion this quarter, growing 123% year-over-year'"
+          "value": 633000000000.0,
+          "published": "2026-04-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2026-06-30",
+          "value": 684000000000.0,
+          "published": "2026-07-29",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2026-09-30",
+          "value": 683000000000.0,
+          "published": "2026-10-28",
+          "company": "MSFT",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-03-31",
-        "due": true,
-        "reason": "220 dage gammel (> 200)"
+        "latest": "2026-09-30",
+        "due": false,
+        "auto": true,
+        "reason": "Automatisk: SEC EDGAR RPO (edgar_quarterly)"
       }
     },
     "google_cloud_revenue": {
       "layer": 4,
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "Google Cloud segmentomsætning",
       "unit": "USD",
       "company": "GOOGL",
       "points": [
         {
-          "period_end": "2026-03-31",
-          "value": 20000000000.0,
-          "growth_pct": 63,
-          "published": "2026-04-29",
-          "confidence": "secondary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000043/googexhibit991q12026.htm"
+          "ticker": "GOOGL",
+          "period_end": "2023-06-30",
+          "published": "2023-07-25",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204423000067/googexhibit991q22023.htm",
+          "metric": "google_cloud_revenue",
+          "value": 8031000000.0,
+          "growth_pct": 28.0,
+          "auto": true
         },
         {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2023-09-30",
+          "published": "2023-10-24",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204423000088/googexhibit991q32023.htm",
+          "metric": "google_cloud_revenue",
+          "value": 8411000000.0,
+          "growth_pct": 22.5,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2023-12-31",
+          "published": "2024-01-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000014/googexhibit991q42023.htm",
+          "metric": "google_cloud_revenue",
+          "value": 9192000000.0,
+          "growth_pct": 25.7,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2024-03-31",
+          "published": "2024-04-25",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000047/googexhibit991q12024.htm",
+          "metric": "google_cloud_revenue",
+          "value": 9574000000.0,
+          "growth_pct": 28.4,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2024-06-30",
+          "published": "2024-07-23",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000076/googexhibit991q22024.htm",
+          "metric": "google_cloud_revenue",
+          "value": 10347000000.0,
+          "growth_pct": 28.8,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2024-09-30",
+          "published": "2024-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000115/googexhibit991q32024.htm",
+          "metric": "google_cloud_revenue",
+          "value": 11353000000.0,
+          "growth_pct": 35.0,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2024-12-31",
+          "published": "2025-02-04",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000010/googexhibit991q42024.htm",
+          "metric": "google_cloud_revenue",
+          "value": 11955000000.0,
+          "growth_pct": 30.1,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2025-03-31",
+          "published": "2025-04-24",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000040/googexhibit991q12025.htm",
+          "metric": "google_cloud_revenue",
+          "value": 12260000000.0,
+          "growth_pct": 28.1,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2025-06-30",
+          "published": "2025-07-23",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000056/googexhibit991q22025.htm",
+          "metric": "google_cloud_revenue",
+          "value": 13624000000.0,
+          "growth_pct": 31.7,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2025-09-30",
+          "published": "2025-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000087/googexhibit991q32025.htm",
+          "metric": "google_cloud_revenue",
+          "value": 15157000000.0,
+          "growth_pct": 33.5,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2025-12-31",
+          "published": "2026-02-04",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm",
+          "metric": "google_cloud_revenue",
+          "value": 17664000000.0,
+          "growth_pct": 47.8,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2026-03-31",
+          "published": "2026-04-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm",
+          "metric": "google_cloud_revenue",
+          "value": 20028000000.0,
+          "growth_pct": 63.4,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
           "period_end": "2026-06-30",
-          "value": 24800000000.0,
-          "growth_pct": 82,
           "published": "2026-07-22",
-          "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000066/googexhibit991q22026.htm"
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+          "metric": "google_cloud_revenue",
+          "value": 24768000000.0,
+          "growth_pct": 81.8,
+          "auto": true
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "GOOGL",
+          "period_end": "2026-09-30",
+          "published": "2026-10-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+          "metric": "google_cloud_revenue",
+          "value": 30709000000.0,
+          "growth_pct": 102.6,
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-06-30",
+        "latest": "2026-09-30",
         "due": false,
-        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
+        "auto": true,
+        "reason": "Automatisk: SEC earnings releases (cloud_releases)"
       }
     },
     "google_cloud_backlog": {
       "layer": 4,
+      "auto": {
+        "dataset": "edgar_quarterly",
+        "metric": "rpo",
+        "ticker": "GOOGL"
+      },
       "automated_by": "SEC EDGAR RPO (edgar_quarterly)",
       "description": "Google Cloud backlog",
       "unit": "USD",
       "company": "GOOGL",
       "points": [
         {
+          "period_end": "2019-12-31",
+          "value": 11400000000.0,
+          "published": "2020-02-04",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-03-31",
+          "value": 12800000000.0,
+          "published": "2020-04-29",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-06-30",
+          "value": 14800000000.0,
+          "published": "2020-07-31",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-09-30",
+          "value": 19000000000.0,
+          "published": "2020-10-30",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-12-31",
+          "value": 29800000000.0,
+          "published": "2021-02-03",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-03-31",
+          "value": 30700000000.0,
+          "published": "2021-04-28",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-06-30",
+          "value": 35300000000.0,
+          "published": "2021-07-28",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-09-30",
+          "value": 37100000000.0,
+          "published": "2021-10-27",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-12-31",
+          "value": 51000000000.0,
+          "published": "2022-02-02",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-03-31",
+          "value": 50500000000.0,
+          "published": "2022-04-27",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-06-30",
+          "value": 51200000000.0,
+          "published": "2022-07-27",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-09-30",
+          "value": 52400000000.0,
+          "published": "2022-10-26",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-12-31",
+          "value": 64300000000.0,
+          "published": "2023-02-03",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-03-31",
+          "value": 61700000000.0,
+          "published": "2023-04-26",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-06-30",
+          "value": 60600000000.0,
+          "published": "2023-07-26",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-09-30",
+          "value": 64900000000.0,
+          "published": "2023-10-25",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-12-31",
+          "value": 74100000000.0,
+          "published": "2024-01-31",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-03-31",
+          "value": 72500000000.0,
+          "published": "2024-04-26",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-06-30",
+          "value": 78800000000.0,
+          "published": "2024-07-24",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-09-30",
+          "value": 86800000000.0,
+          "published": "2024-10-30",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-12-31",
+          "value": 93200000000.0,
+          "published": "2025-02-05",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-03-31",
+          "value": 92400000000.0,
+          "published": "2025-04-25",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-06-30",
+          "value": 108200000000.0,
+          "published": "2025-07-24",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-09-30",
+          "value": 157700000000.0,
+          "published": "2025-10-30",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-12-31",
+          "value": 242800000000.0,
+          "published": "2026-02-05",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
           "period_end": "2026-03-31",
-          "value": 460000000000.0,
-          "published": "2026-04-29",
-          "confidence": "primary",
-          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/",
-          "note": "'nearly doubled quarter-on-quarter to over $460 billion'"
+          "value": 467600000000.0,
+          "published": "2026-04-30",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
         },
         {
           "period_end": "2026-06-30",
-          "value": 514000000000.0,
-          "published": "2026-07-22",
-          "confidence": "primary",
-          "source": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/"
+          "value": 519500000000.0,
+          "published": "2026-07-23",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2026-09-30",
+          "value": 567700000000.0,
+          "published": "2026-10-29",
+          "company": "GOOGL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001652044/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-06-30",
+        "latest": "2026-09-30",
         "due": false,
-        "reason": "Opdateres automatisk (SEC EDGAR RPO (edgar_quarterly))"
+        "auto": true,
+        "reason": "Automatisk: SEC EDGAR RPO (edgar_quarterly)"
       }
     },
     "aws_revenue": {
       "layer": 4,
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "AWS segmentomsætning",
       "unit": "USD",
       "company": "AMZN",
       "points": [
         {
-          "period_end": "2026-06-30",
-          "value": 42200000000.0,
-          "growth_pct": 37,
-          "published": "2026-07-30",
-          "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872426000024/amzn-20260630xex991.htm",
-          "note": "Hurtigste vækst i 18 kvartaler; run-rate 169 mia."
-        }
-      ],
-      "status": {
-        "latest": "2026-06-30",
-        "due": false,
-        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
-      }
-    },
-    "aws_backlog": {
-      "layer": 4,
-      "description": "AWS backlog",
-      "unit": "USD",
-      "company": "AMZN",
-      "points": [
-        {
-          "period_end": "2026-03-31",
-          "value": 364000000000.0,
-          "confidence": "secondary",
-          "source": "https://vectorshift.ai/research/companies/amazon-com/earnings/2026-q2"
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2022-12-31",
+          "published": "2023-02-02",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872423000002/amzn-20221231xex991.htm",
+          "metric": "aws_revenue",
+          "value": 21400000000.0,
+          "growth_pct": 20.0,
+          "auto": true
         },
         {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2023-03-31",
+          "published": "2023-04-27",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872423000006/amzn-20230331xex991.htm",
+          "metric": "aws_revenue",
+          "value": 21400000000.0,
+          "growth_pct": 16.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2023-06-30",
+          "published": "2023-08-03",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872423000010/amzn-20230630xex991.htm",
+          "metric": "aws_revenue",
+          "value": 22100000000.0,
+          "growth_pct": 12.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2023-09-30",
+          "published": "2023-10-26",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872423000016/amzn-20230930xex991.htm",
+          "metric": "aws_revenue",
+          "value": 23100000000.0,
+          "growth_pct": 12.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2023-12-31",
+          "published": "2024-02-01",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000006/amzn-20231231xex991.htm",
+          "metric": "aws_revenue",
+          "value": 24200000000.0,
+          "growth_pct": 13.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2024-03-31",
+          "published": "2024-04-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000081/amzn-20240331xex991.htm",
+          "metric": "aws_revenue",
+          "value": 25000000000.0,
+          "growth_pct": 17.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2024-06-30",
+          "published": "2024-08-01",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000128/amzn-20240630xex991.htm",
+          "metric": "aws_revenue",
+          "value": 26300000000.0,
+          "growth_pct": 19.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2024-09-30",
+          "published": "2024-10-31",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000158/amzn-20240930xex991.htm",
+          "metric": "aws_revenue",
+          "value": 27500000000.0,
+          "growth_pct": 19.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2024-12-31",
+          "published": "2025-02-06",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000002/amzn-20241231xex991.htm",
+          "metric": "aws_revenue",
+          "value": 28800000000.0,
+          "growth_pct": 19.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2025-03-31",
+          "published": "2025-05-01",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250331xex991.htm",
+          "metric": "aws_revenue",
+          "value": 29300000000.0,
+          "growth_pct": 17.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2025-06-30",
+          "published": "2025-07-31",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000084/amzn-20250630xex991.htm",
+          "metric": "aws_revenue",
+          "value": 30900000000.0,
+          "growth_pct": 17.5,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2025-09-30",
+          "published": "2025-10-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000121/amzn-20250930xex991.htm",
+          "metric": "aws_revenue",
+          "value": 33000000000.0,
+          "growth_pct": 20.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2025-12-31",
+          "published": "2026-02-05",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000002/amzn-20251231xex991.htm",
+          "metric": "aws_revenue",
+          "value": 35600000000.0,
+          "growth_pct": 24.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2026-03-31",
+          "published": "2026-04-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260331xex991.htm",
+          "metric": "aws_revenue",
+          "value": 37600000000.0,
+          "growth_pct": 28.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
           "period_end": "2026-06-30",
-          "value": 496000000000.0,
           "published": "2026-07-30",
-          "confidence": "secondary",
-          "source": "https://vectorshift.ai/research/companies/amazon-com/earnings/2026-q2",
-          "note": "Fra earnings-kaldet; ikke i pressemeddelelsen"
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+          "metric": "aws_revenue",
+          "value": 42200000000.0,
+          "growth_pct": 37.0,
+          "auto": true
+        },
+        {
+          "ticker": "AMZN",
+          "company": "AMZN",
+          "period_end": "2026-09-30",
+          "published": "2026-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+          "metric": "aws_revenue",
+          "value": 46000000000.0,
+          "growth_pct": 39.0,
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-06-30",
-        "due": true,
-        "reason": "AMZN har rapporteret periode til 2026-09-30"
+        "latest": "2026-09-30",
+        "due": false,
+        "auto": true,
+        "reason": "Automatisk: SEC earnings releases (cloud_releases)"
       }
     },
     "oracle_oci_revenue": {
       "layer": 4,
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "automated_by": "SEC earnings releases (cloud_releases)",
       "description": "Oracle Cloud Infrastructure (IaaS) omsætning",
       "unit": "USD",
       "company": "ORCL",
       "points": [
         {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2023-02-28",
+          "published": "2023-03-09",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000156459023003362/orcl-ex991_6.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 1200000000.0,
+          "growth_pct": 55.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2023-05-31",
+          "published": "2023-06-12",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017023027490/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 1400000000.0,
+          "growth_pct": 76.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2023-08-31",
+          "published": "2023-09-11",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017023047471/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 1500000000.0,
+          "growth_pct": 66.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2023-11-30",
+          "published": "2023-12-11",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017023069410/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 1600000000.0,
+          "growth_pct": 52.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2024-02-29",
+          "published": "2024-03-11",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017024029250/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 1800000000.0,
+          "growth_pct": 49.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2024-05-31",
+          "published": "2024-06-11",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017024071916/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 2000000000.0,
+          "growth_pct": 42.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2024-08-31",
+          "published": "2024-09-09",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017024104753/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 2200000000.0,
+          "growth_pct": 45.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2024-11-30",
+          "published": "2024-12-09",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017024134537/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 2400000000.0,
+          "growth_pct": 52.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2025-02-28",
+          "published": "2025-03-10",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017025036295/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 2700000000.0,
+          "growth_pct": 49.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2025-05-31",
+          "published": "2025-06-11",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000095017025084831/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 3000000000.0,
+          "growth_pct": 52.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2025-08-31",
+          "published": "2025-09-09",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312525199175/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 3300000000.0,
+          "growth_pct": 55.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2025-11-30",
+          "published": "2025-12-10",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312525314207/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 4099999999.9999995,
+          "growth_pct": 68.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2026-02-28",
+          "published": "2026-03-10",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526100148/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 4900000000.0,
+          "growth_pct": 84.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
+          "period_end": "2026-05-31",
+          "published": "2026-06-10",
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526265848/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 5800000000.0,
+          "growth_pct": 93.0,
+          "auto": true
+        },
+        {
+          "ticker": "ORCL",
+          "company": "ORCL",
           "period_end": "2026-08-31",
-          "value": 7400000000.0,
-          "growth_pct": 121,
           "published": "2026-09-10",
-          "confidence": "primary",
-          "source": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/"
+          "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/orcl-ex99_1.htm",
+          "metric": "oracle_oci_revenue",
+          "value": 7400000000.0,
+          "growth_pct": 121.0,
+          "auto": true
         }
       ],
       "status": {
         "latest": "2026-08-31",
         "due": false,
-        "reason": "Opdateres automatisk (SEC earnings releases (cloud_releases))"
+        "auto": true,
+        "reason": "Automatisk: SEC earnings releases (cloud_releases)"
       }
     },
     "oracle_rpo": {
       "layer": 4,
+      "auto": {
+        "dataset": "edgar_quarterly",
+        "metric": "rpo",
+        "ticker": "ORCL"
+      },
       "automated_by": "SEC EDGAR RPO (edgar_quarterly)",
       "description": "Oracle remaining performance obligations",
       "unit": "USD",
       "company": "ORCL",
       "points": [
         {
+          "period_end": "2018-08-31",
+          "value": 31300000000.0,
+          "published": "2018-09-19",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2018-11-30",
+          "value": 30100000000.0,
+          "published": "2018-12-19",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-02-28",
+          "value": 31500000000.0,
+          "published": "2019-03-18",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-05-31",
+          "value": 36200000000.0,
+          "published": "2019-06-21",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-08-31",
+          "value": 33800000000.0,
+          "published": "2019-09-13",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2019-11-30",
+          "value": 32800000000.0,
+          "published": "2019-12-13",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-02-29",
+          "value": 33800000000.0,
+          "published": "2020-03-13",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-05-31",
+          "value": 37000000000.0,
+          "published": "2020-06-22",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-08-31",
+          "value": 35500000000.0,
+          "published": "2020-09-15",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2020-11-30",
+          "value": 34400000000.0,
+          "published": "2020-12-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-02-28",
+          "value": 35300000000.0,
+          "published": "2021-03-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-05-31",
+          "value": 41300000000.0,
+          "published": "2021-06-21",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-08-31",
+          "value": 38700000000.0,
+          "published": "2021-09-13",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2021-11-30",
+          "value": 37200000000.0,
+          "published": "2021-12-10",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-02-28",
+          "value": 38500000000.0,
+          "published": "2022-03-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-05-31",
+          "value": 46600000000.0,
+          "published": "2022-06-21",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-08-31",
+          "value": 60700000000.0,
+          "published": "2022-09-13",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2022-11-30",
+          "value": 61200000000.0,
+          "published": "2022-12-13",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-02-28",
+          "value": 62300000000.0,
+          "published": "2023-03-10",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-05-31",
+          "value": 67900000000.0,
+          "published": "2023-06-20",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-08-31",
+          "value": 64900000000.0,
+          "published": "2023-09-12",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2023-11-30",
+          "value": 65500000000.0,
+          "published": "2023-12-12",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-02-29",
+          "value": 80200000000.0,
+          "published": "2024-03-12",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-05-31",
+          "value": 97900000000.0,
+          "published": "2024-06-20",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-08-31",
+          "value": 99100000000.0,
+          "published": "2024-09-10",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2024-11-30",
+          "value": 97300000000.0,
+          "published": "2024-12-10",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-02-28",
+          "value": 130200000000.0,
+          "published": "2025-03-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-05-31",
+          "value": 137800000000.0,
+          "published": "2025-06-18",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-08-31",
+          "value": 455300000000.0,
+          "published": "2025-09-10",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2025-11-30",
+          "value": 523300000000.0,
+          "published": "2025-12-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2026-02-28",
+          "value": 552600000000.0,
+          "published": "2026-03-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
+          "period_end": "2026-05-31",
+          "value": 638000000000.0,
+          "published": "2026-06-22",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
+        },
+        {
           "period_end": "2026-08-31",
           "value": 664000000000.0,
-          "published": "2026-09-10",
-          "confidence": "primary",
-          "source": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/",
-          "note": "Analytikere anslår ~halvdelen fra OpenAI (koncentrationsrisiko)"
+          "published": "2026-09-11",
+          "company": "ORCL",
+          "source": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001341439/us-gaap/RevenueRemainingPerformanceObligation.json",
+          "auto": true
         }
       ],
       "status": {
         "latest": "2026-08-31",
         "due": false,
-        "reason": "Opdateres automatisk (SEC EDGAR RPO (edgar_quarterly))"
+        "auto": true,
+        "reason": "Automatisk: SEC EDGAR RPO (edgar_quarterly)"
       }
     },
     "capex_guidance": {
       "layer": 5,
+      "automated_by": "SEC earnings releases (Meta, Amazon) + faktisk capex fra EDGAR",
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "description": "Hyperscaler capex-guidance (USD), low/high; value = midtpunkt",
       "unit": "USD",
       "kind": "guidance",
       "points": [
         {
+          "ticker": "META",
           "company": "META",
-          "fiscal_year": 2026,
-          "basis": "calendar",
+          "period_end": "2024-12-31",
+          "published": "2025-01-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000014/meta-12312024xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2025,
+          "low": 60000000000.0,
+          "high": 65000000000.0,
+          "value": 62500000000.0,
+          "auto": true
+        },
+        {
+          "ticker": "META",
+          "company": "META",
+          "period_end": "2025-03-31",
+          "published": "2025-04-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000050/meta-03312025xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2025,
+          "low": 64000000000.0,
+          "high": 72000000000.0,
+          "value": 68000000000.0,
+          "auto": true
+        },
+        {
+          "ticker": "META",
+          "company": "META",
+          "period_end": "2025-06-30",
+          "published": "2025-07-30",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036719/meta-06302025xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2025,
+          "low": 66000000000.0,
+          "high": 72000000000.0,
+          "value": 69000000000.0,
+          "auto": true
+        },
+        {
+          "ticker": "META",
+          "company": "META",
+          "period_end": "2025-09-30",
+          "published": "2025-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047114/meta-09302025xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2025,
+          "low": 70000000000.0,
+          "high": 72000000000.0,
+          "value": 71000000000.0,
+          "auto": true
+        },
+        {
+          "ticker": "META",
+          "company": "META",
           "period_end": "2025-12-31",
+          "published": "2026-01-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-12312025xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2026,
           "low": 115000000000.0,
           "high": 135000000000.0,
           "value": 125000000000.0,
-          "published": "2026-01-28",
-          "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-12312025xexhibit991.htm",
-          "note": "Første udmelding for 2026"
+          "auto": true
         },
         {
-          "company": "MSFT",
+          "company": "AMZN",
           "fiscal_year": 2026,
           "basis": "calendar",
           "period_end": "2026-03-31",
-          "value": 190000000000.0,
-          "confidence": "primary",
-          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
-          "note": "'roughly $190 billion' for kalenderår 2026"
+          "value": 200000000000.0,
+          "confidence": "secondary",
+          "source": "https://fortune.com/2026/07/30/andy-jassy-amazon-capex-demand-aws-pga-tour/"
         },
         {
           "company": "GOOGL",
@@ -459,37 +1936,38 @@
           "source": "https://fn2.ai/earnings/goog/2026-q2"
         },
         {
-          "company": "AMZN",
-          "fiscal_year": 2026,
-          "basis": "calendar",
-          "period_end": "2026-03-31",
-          "value": 200000000000.0,
-          "confidence": "secondary",
-          "source": "https://fortune.com/2026/07/30/andy-jassy-amazon-capex-demand-aws-pga-tour/"
-        },
-        {
+          "ticker": "META",
           "company": "META",
-          "fiscal_year": 2026,
-          "basis": "calendar",
           "period_end": "2026-03-31",
+          "published": "2026-04-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-03312026xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2026,
           "low": 125000000000.0,
           "high": 145000000000.0,
           "value": 135000000000.0,
-          "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026050596/meta-06302026xexhibit991.htm",
-          "note": "Angivet som 'prior outlook' i Q2-release"
+          "auto": true
         },
         {
           "company": "MSFT",
           "fiscal_year": 2026,
           "basis": "calendar",
-          "period_end": "2026-06-30",
-          "value": 175000000000.0,
-          "published": "2026-07-29",
+          "period_end": "2026-03-31",
+          "value": 190000000000.0,
           "confidence": "primary",
-          "comparable_with_previous": false,
-          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
-          "note": "~175 mia. Faldet skyldes flytning af datacenterleje fra finansiel til operationel leasing – IKKE en reel nedjustering. FY27-capex 'will grow year-over-year'; Q1 FY27 >50 mia."
+          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+          "note": "'roughly $190 billion' for kalenderår 2026"
+        },
+        {
+          "company": "AMZN",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-06-30",
+          "value": 220000000000.0,
+          "published": "2026-07-30",
+          "confidence": "secondary",
+          "source": "https://fortune.com/2026/07/30/andy-jassy-amazon-capex-demand-aws-pga-tour/",
+          "note": "Hævet pga. dyrere hukommelse og mere kapacitet. Jassy: kapacitet rækker ikke til efterspørgslen i 2026 eller 2027"
         },
         {
           "company": "GOOGL",
@@ -505,27 +1983,29 @@
           "note": "Hævet; 2027 forventes højere. Fra CFO på kaldet"
         },
         {
-          "company": "AMZN",
-          "fiscal_year": 2026,
-          "basis": "calendar",
-          "period_end": "2026-06-30",
-          "value": 220000000000.0,
-          "published": "2026-07-30",
-          "confidence": "secondary",
-          "source": "https://fortune.com/2026/07/30/andy-jassy-amazon-capex-demand-aws-pga-tour/",
-          "note": "Hævet pga. dyrere hukommelse og mere kapacitet. Jassy: kapacitet rækker ikke til efterspørgslen i 2026 eller 2027"
-        },
-        {
+          "ticker": "META",
           "company": "META",
-          "fiscal_year": 2026,
-          "basis": "calendar",
           "period_end": "2026-06-30",
+          "published": "2026-07-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2026,
           "low": 130000000000.0,
           "high": 145000000000.0,
           "value": 137500000000.0,
+          "auto": true
+        },
+        {
+          "company": "MSFT",
+          "fiscal_year": 2026,
+          "basis": "calendar",
+          "period_end": "2026-06-30",
+          "value": 175000000000.0,
           "published": "2026-07-29",
           "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026050596/meta-06302026xexhibit991.htm"
+          "comparable_with_previous": false,
+          "source": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+          "note": "~175 mia. Faldet skyldes flytning af datacenterleje fra finansiel til operationel leasing – IKKE en reel nedjustering. FY27-capex 'will grow year-over-year'; Q1 FY27 >50 mia."
         },
         {
           "company": "ORCL",
@@ -541,88 +2021,41 @@
           "note": "Heraf ~70 mia. egen capex + 20–25 mia., som kunder forventes at betale tilbage"
         },
         {
-          "company": "META",
-          "fiscal_year": 2026,
-          "basis": "calendar",
+          "ticker": "AMZN",
+          "company": "AMZN",
           "period_end": "2026-09-30",
+          "published": "2026-10-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2026,
+          "low": 220000000000.0,
+          "high": 220000000000.0,
+          "value": 220000000000.0,
+          "auto": true
+        },
+        {
+          "ticker": "META",
+          "company": "META",
+          "period_end": "2026-09-30",
+          "published": "2026-10-21",
+          "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
+          "metric": "capex_guidance",
+          "fiscal_year": 2026,
           "low": 135000000000.0,
           "high": 145000000000.0,
           "value": 140000000000.0,
-          "published": "2026-10-21",
-          "confidence": "primary",
-          "source": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-09302026xexhibit991.htm",
-          "note": "Bunden hævet. Ingen 2027-guidance endnu"
-        }
-      ],
-      "status": {
-        "latest": "2026-09-30",
-        "per_company": {
-          "AMZN": {
-            "latest": "2026-06-30",
-            "due": true,
-            "reason": "EDGAR har 2026-09-30"
-          },
-          "GOOGL": {
-            "latest": "2026-06-30",
-            "due": true,
-            "reason": "EDGAR har 2026-09-30"
-          },
-          "META": {
-            "latest": "2026-09-30",
-            "due": false,
-            "reason": null
-          },
-          "MSFT": {
-            "latest": "2026-06-30",
-            "due": true,
-            "reason": "EDGAR har 2026-09-30"
-          },
-          "ORCL": {
-            "latest": "2026-08-31",
-            "due": false,
-            "reason": null
-          }
-        },
-        "due": true
-      }
-    },
-    "tsmc_hpc_share_pct": {
-      "layer": 5,
-      "description": "HPC-andel af TSMC's omsætning",
-      "unit": "pct",
-      "expected_every_days": 100,
-      "points": [
-        {
-          "period_end": "2025-09-30",
-          "value": 57,
-          "published": "2026-10-15",
-          "confidence": "primary",
-          "source": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf"
-        },
-        {
-          "period_end": "2026-06-30",
-          "value": 66,
-          "published": "2026-10-15",
-          "confidence": "primary",
-          "source": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf"
-        },
-        {
-          "period_end": "2026-09-30",
-          "value": 68,
-          "published": "2026-10-15",
-          "confidence": "primary",
-          "source": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf",
-          "note": "HPC-omsætning +22 % k/k"
+          "auto": true
         }
       ],
       "status": {
         "latest": "2026-09-30",
         "due": false,
-        "reason": null
+        "reason": "Automatisk for Meta og Amazon; faktisk capex fra EDGAR bruges for alle fem"
       }
     },
     "tsmc_monthly_revenue_backfill": {
       "layer": 5,
+      "static": true,
       "description": "TSMC månedsomsætning før pipelinen startede, i tusinde TWD (samme enhed som TWSE-feedet). Krydstjekket: sep-25 og sep-26 matcher TWSE-data præcist.",
       "unit": "kTWD",
       "expected_every_days": 100000,
@@ -823,49 +2256,175 @@
       "status": {
         "latest": "2026-08-31",
         "due": false,
-        "reason": null
+        "reason": "Fast historik"
       }
     },
     "nvidia_datacenter_revenue": {
       "layer": 5,
+      "automated_by": "SEC earnings releases (Nvidia)",
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "description": "Nvidia Data Center-segment",
       "unit": "USD",
       "company": "NVDA",
       "points": [
         {
-          "period_end": "2026-07-26",
-          "value": 89000000000.0,
-          "growth_pct": 117,
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2024-04-30",
+          "published": "2024-05-22",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000113/q1fy25pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 22600000000.0,
+          "growth_pct": 427.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2024-07-31",
+          "published": "2024-08-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000262/q2fy25pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 26300000000.0,
+          "growth_pct": 154.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2024-10-31",
+          "published": "2024-11-20",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000315/q3fy25pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 30800000000.0,
+          "growth_pct": 112.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2025-01-31",
+          "published": "2025-02-26",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 35600000000.0,
+          "growth_pct": 93.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2025-04-30",
+          "published": "2025-05-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 39100000000.0,
+          "growth_pct": 73.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2025-07-31",
+          "published": "2025-08-27",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 41100000000.0,
+          "growth_pct": 56.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2025-10-31",
+          "published": "2025-11-19",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 51200000000.0,
+          "growth_pct": 66.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2026-01-31",
+          "published": "2026-02-25",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 62300000000.0,
+          "growth_pct": 75.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2026-04-30",
+          "published": "2026-05-20",
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 75200000000.0,
+          "growth_pct": 92.0,
+          "auto": true
+        },
+        {
+          "ticker": "NVDA",
+          "company": "NVDA",
+          "period_end": "2026-07-31",
           "published": "2026-08-26",
-          "confidence": "primary",
-          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
-          "note": "Q3-guidance (total omsætning): 108 mia. ±2 %, uden Kina"
+          "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+          "metric": "nvidia_datacenter_revenue",
+          "value": 89000000000.0,
+          "growth_pct": 117.0,
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-07-26",
+        "latest": "2026-07-31",
         "due": false,
-        "reason": null
+        "auto": true,
+        "reason": "Automatisk: SEC earnings releases (Nvidia)"
       }
     },
     "skhynix_revenue_krw": {
       "layer": 5,
+      "automated_by": "SEC 6-K (SK hynix, foreløbige resultater)",
+      "auto": {
+        "dataset": "cloud_releases"
+      },
       "description": "SK hynix kvartalsomsætning (KRW)",
       "unit": "KRW",
       "expected_every_days": 100,
       "points": [
         {
+          "ticker": "SKHY",
+          "company": "SKHY",
           "period_end": "2026-06-30",
-          "value": 79318700000000.0,
-          "published": "2026-07-28",
-          "confidence": "secondary",
-          "source": "https://www.kosmo.com.my/2026/07/28/sk-hynix-announces-2q26-financial-results/"
+          "published": "2026-07-29",
+          "source": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526321989/d115239d6k.htm",
+          "metric": "skhynix_revenue_krw",
+          "value": 79318746000000.0,
+          "growth_pct": 256.8,
+          "auto": true
+        },
+        {
+          "ticker": "SKHY",
+          "company": "SKHY",
+          "period_end": "2026-09-30",
+          "published": "2026-10-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm",
+          "metric": "skhynix_revenue_krw",
+          "value": 104615483000000.0,
+          "growth_pct": 327.9,
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-06-30",
-        "due": true,
-        "reason": "129 dage gammel (> 100)"
+        "latest": "2026-09-30",
+        "due": false,
+        "auto": true,
+        "reason": "Automatisk: SEC 6-K (SK hynix, foreløbige resultater)"
       }
     }
   }

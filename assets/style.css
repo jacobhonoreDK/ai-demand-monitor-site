@@ -233,3 +233,5 @@ main { padding-top: 20px; padding-bottom: 24px; }
 .glossary dd { margin: 0; color: var(--text-2); }
 @media (max-width: 640px) { .glossary { grid-template-columns: 1fr; } .glossary dd { margin-bottom: 6px; } }
 .prose .explain-ind { padding-left: 0; }
+.series-cell { min-width: 200px; max-width: 360px; }
+#manual-table td.num { white-space: normal; min-width: 90px; }

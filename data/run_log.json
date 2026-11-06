@@ -85,22 +85,22 @@
     },
     "edgar": {
       "source": "edgar",
-      "started_at": "2026-11-02T13:41:45+00:00",
+      "started_at": "2026-11-06T15:28:52+00:00",
       "status": "ok",
       "datasets": {
         "edgar_quarterly": {
           "records": 640,
-          "added": 14,
-          "unchanged": 626
+          "added": 0,
+          "unchanged": 640
         },
         "edgar_last_filing": {
           "records": 7,
-          "added": 3,
-          "unchanged": 4
+          "added": 0,
+          "unchanged": 7
         }
       },
       "warnings": [],
-      "duration_s": 0.5
+      "duration_s": 2.3
     },
     "fmp": {
       "source": "fmp",
@@ -112,38 +112,61 @@
     },
     "edgar_releases": {
       "source": "edgar_releases",
-      "started_at": "2026-11-02T13:41:46+00:00",
+      "started_at": "2026-11-06T15:29:30+00:00",
       "status": "warning",
       "datasets": {
         "cloud_releases": {
-          "records": 2,
-          "added": 2,
+          "records": 86,
+          "added": 5,
+          "unchanged": 81
+        },
+        "release_index": {
+          "records": 115,
+          "added": 115,
           "unchanged": 0
         }
       },
       "warnings": [
-        "MSFT 2026-10-28: segmenttal ikke fundet i https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm"
+        "META 2024-10-30: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1326801/000132680124000077/meta-09302024xexhibit991.htm",
+        "META 2024-07-31: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1326801/000132680124000065/meta-06302024xexhibit991.htm",
+        "NVDA 2024-02-21: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581024000028/q4fy24pr.htm",
+        "NVDA 2023-11-21: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000225/q3fy24pr.htm",
+        "NVDA 2023-08-23: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000171/q2fy24pr.htm",
+        "NVDA 2023-05-24: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000087/q1fy24pr.htm",
+        "NVDA 2023-02-22: ingen tal fundet i https://www.sec.gov/Archives/edgar/data/1045810/000104581023000014/q4fy23pr.htm"
       ],
-      "duration_s": 0.6
+      "duration_s": 10.2
+    },
+    "silicondata": {
+      "source": "silicondata",
+      "started_at": "2026-11-06T15:32:23+00:00",
+      "status": "ok",
+      "datasets": {
+        "sdllmtk_daily": {
+          "records": 8,
+          "added": 8,
+          "unchanged": 0
+        }
+      },
+      "warnings": [],
+      "duration_s": 0.5
     }
   },
   "last_run": {
-    "at": "2026-11-06T13:04:47+00:00",
-    "schedule": "daily",
+    "at": "2026-11-06T15:32:24+00:00",
+    "schedule": "all",
     "sources": [
-      "openrouter_prices",
-      "twse",
-      "markets"
+      "silicondata"
     ]
   },
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-11-06T13:04:47+00:00"
+      "at": "2026-11-06T15:39:05+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-11-06T13:04:48+00:00"
+      "at": "2026-11-06T15:39:05+00:00"
     }
   }
 }

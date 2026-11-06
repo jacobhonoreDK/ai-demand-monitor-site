@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Demand Monitor</title>
   <meta name="description" content="Overvågning af AI-efterspørgsel i fem lag: volumen, pris, kapacitet, cloud-omsætning og capex.">
-  <link rel="stylesheet" href="assets/style.css?v=3">
+  <link rel="stylesheet" href="assets/style.css?v=5">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/app.js?v=3" defer></script>
+  <script src="assets/app.js?v=5" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -19,7 +19,7 @@
       <div class="topbar-actions">
         <nav class="tabs" role="tablist" aria-label="Visning">
           <button role="tab" aria-selected="true" data-tab="overview" id="tab-overview">Oversigt</button>
-          <button role="tab" aria-selected="false" data-tab="manual" id="tab-manual">Manuelle input <span class="badge" id="manual-badge" hidden></span></button>
+          <button role="tab" aria-selected="false" data-tab="manual" id="tab-manual">Kvartalstal <span class="badge" id="manual-badge" hidden></span></button>
           <button role="tab" aria-selected="false" data-tab="status" id="tab-status">Datastatus <span class="badge" id="status-badge" hidden></span></button>
           <button role="tab" aria-selected="false" data-tab="explain" id="tab-explain">Forklaring</button>
         </nav>
@@ -104,11 +104,11 @@
       <article class="card market" id="market"></article>
     </section>
 
-    <!-- ===================== MANUELLE INPUT ===================== -->
+    <!-- ===================== KVARTALSTAL ===================== -->
     <section id="panel-manual" role="tabpanel" aria-labelledby="tab-manual" hidden>
       <article class="card">
-        <h2 class="card-label">Manuelle kvartalstal</h2>
-        <p class="muted small">Opdateres i <code>manual_inputs.yaml</code>. "Mangler" betyder, at selskabet har rapporteret en nyere periode (ifølge EDGAR), eller at serien er ældre end forventet.</p>
+        <h2 class="card-label">Kvartals- og selskabstal</h2>
+        <p class="muted small">Alle tal hentes automatisk – primært fra selskabernes egne indberetninger til SEC (earnings releases og regnskabsdata) og fra Silicon Datas indeksside. "Halter" betyder, at selskabet har rapporteret et nyere kvartal, end den automatiske kilde har fanget – typisk fordi ordlyden i releasen er ændret; se Datastatus. Ældre punkter kan stamme fra den oprindelige manuelle indtastning (markeret "manuel").</p>
         <div class="table-scroll"><table class="data-table" id="manual-table"></table></div>
       </article>
     </section>
@@ -179,7 +179,7 @@
           <li><strong>OpenRouter</strong> (tokenvolumen og modelpriser) er en mellemmand mellem udviklere og mange modeludbydere. Den er ikke repræsentativ for hele markedet og vokser også ved at vinde markedsandele – brug den som retningsgiver.</li>
           <li><strong>GPU-priser</strong> er offentlige listepriser fra CoreWeave, Lambda, Nebius, Verda og RunPod. Store kunder betaler typisk mindre på langvarige aftaler.</li>
           <li><strong>Regnskabstal</strong> kommer direkte fra SEC (amerikanske selskaber) og Taiwans børs (TSMC). Capex er ekskl. finansiel leasing og derfor lavere end overskrifterne.</li>
-          <li><strong>Manuelle input</strong> (fx Googles token-tal, labs' omsætning) har en kildehenvisning per tal; se fanen Manuelle input.</li>
+          <li><strong>Kvartalstal</strong> (cloud-segmenter, backlog, Googles token-tal, Nvidia, SK hynix, capex-guidance) læses automatisk fra selskabernes egne indberetninger til SEC med link til kilden per tal; se fanen Kvartalstal. Tal, der kun oplyses på earnings-kald eller i pressen (fx OpenAIs og Anthropics omsætning), indgår ikke, fordi de ikke kan hentes automatisk og pålideligt.</li>
           <li><strong>Historik</strong> før oktober 2026 for GPU-priser og OpenRouter er hentet fra arkiverede kopier af siderne (Internet Archive).</li>
         </ul>
         <p class="muted small">Ikke investeringsrådgivning. Dashboardet viser data, ikke anbefalinger.</p>
@@ -200,7 +200,7 @@
   </main>
 
   <footer class="wrap muted small footer">
-    Kilder: OpenRouter, CoreWeave, Lambda, Nebius, Verda, RunPod, Vast.ai, SEC EDGAR, TWSE, TSMC IR, Yahoo Finance og manuelle input fra earnings. Ikke investeringsrådgivning.
+    Kilder: OpenRouter, CoreWeave, Lambda, Nebius, Verda, RunPod, Vast.ai, SEC EDGAR (regnskaber og earnings releases), Silicon Data, TWSE, Yahoo Finance og Internet Archive (historik). Ikke investeringsrådgivning.
   </footer>
 
   <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
