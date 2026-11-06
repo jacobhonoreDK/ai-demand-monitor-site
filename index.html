@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Demand Monitor</title>
   <meta name="description" content="Overvågning af AI-efterspørgsel i fem lag: volumen, pris, kapacitet, cloud-omsætning og capex.">
-  <link rel="stylesheet" href="assets/style.css?v=6">
+  <link rel="stylesheet" href="assets/style.css?v=7">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/app.js?v=6" defer></script>
+  <script src="assets/app.js?v=7" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -129,7 +129,7 @@
 
       <article class="card prose" id="forklaring-health">
         <h2>Sådan læser du AI Demand Health</h2>
-        <p>Tallet går fra 0 til 100. <strong>50 betyder, at indikatorerne ligger på deres normale niveau</strong> i forhold til deres egen historik <strong>siden januar 2026</strong>. Grundlaget vokser for hver uge, der går, så vurderingen bygger på en længere og længere periode. Har en serie endnu ikke nok målinger siden januar (fx kvartalstal, hvor 2026 kun har få kvartaler), suppleres med de nærmeste målinger fra før. Det er altså et mål for, om efterspørgslen er stærkere eller svagere end <em>normalt</em> – ikke om den er høj eller lav i absolut forstand. Vokser OpenRouter 150 % om året, er 150 % "normalt"; først hvis væksten falder til 80 %, trækker det ned.</p>
+        <p>Tallet går fra 0 til 100. <strong>50 betyder, at indikatorerne ligger på deres normale niveau</strong> i forhold til deres egen historik <strong>siden januar 2025</strong>. Grundlaget vokser for hver uge, der går, så vurderingen bygger på en længere og længere periode. Har en serie endnu ikke nok målinger siden januar, suppleres med de nærmeste målinger fra før. Det er altså et mål for, om efterspørgslen er stærkere eller svagere end <em>normalt</em> – ikke om den er høj eller lav i absolut forstand. Vokser OpenRouter 150 % om året, er 150 % "normalt"; først hvis væksten falder til 80 %, trækker det ned.</p>
         <div class="bands">
           <span><strong>65+</strong> Over normalt</span>
           <span><strong>55–65</strong> Lidt over</span>
@@ -139,7 +139,7 @@
         </div>
         <h3>Fra rådata til score</h3>
         <ol>
-          <li><strong>z-score per indikator:</strong> hvor mange standardafvigelser er den seneste værdi fra gennemsnittet af de tidligere målinger siden januar 2026? +1 er en tydeligt stærk måling, +2 er usædvanlig, ±3 er loftet. Kun data, der var offentligt kendt på datoen, bruges.</li>
+          <li><strong>z-score per indikator:</strong> hvor mange standardafvigelser er den seneste værdi fra gennemsnittet af de tidligere målinger siden januar 2025? +1 er en tydeligt stærk måling, +2 er usædvanlig, ±3 er loftet. Kun data, der var offentligt kendt på datoen, bruges.</li>
           <li><strong>Fortegn:</strong> for nogle indikatorer er en høj værdi dårlig (fx monetiseringsgabet). Fortegnet vendes, så positiv altid betyder "godt for efterspørgslen".</li>
           <li><strong>Lagscore</strong> = vægtet gennemsnit af lagets indikatorer, mellem −3 og +3.</li>
           <li><strong>Health</strong> = vægtet gennemsnit af lagene, omregnet til 0–100. Lag uden data udelades, og "Beregnet på X af 5 lag" viser dækningen.</li>
