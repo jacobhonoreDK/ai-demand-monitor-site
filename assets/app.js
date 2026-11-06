@@ -210,6 +210,7 @@
     $("health-coverage").textContent = `Beregnet på ${used.length} af ${ls.length} lag (${num((wUsed / wAll) * 100, 0)} % af lagvægten)`;
     const pts = s.health.history.map((p) => ({ d: p.date, v: p.score }));
     $("health-spark").replaceChildren(sparkline(pts, { ref: 50, min: 0, max: 100, height: 48, format: (v) => num(v, 0) }));
+    $("health-period").textContent = pts.length ? `Ugentligt fra ${fmtDate(pts[0].d)} til ${fmtDate(pts[pts.length - 1].d)} (${pts.length} uger)` : "";
     $("summary-text").textContent = s.summary;
   }
 
