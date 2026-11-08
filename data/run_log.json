@@ -2,13 +2,13 @@
   "sources": {
     "openrouter_prices": {
       "source": "openrouter_prices",
-      "started_at": "2026-11-07T11:50:02+00:00",
+      "started_at": "2026-11-08T12:02:15+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_prices": {
-          "records": 452,
-          "added": 21,
-          "unchanged": 431
+          "records": 453,
+          "added": 20,
+          "unchanged": 433
         },
         "openrouter_price_snapshots": {
           "records": 1,
@@ -17,11 +17,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.1
+      "duration_s": 0.2
     },
     "twse": {
       "source": "twse",
-      "started_at": "2026-11-07T11:50:03+00:00",
+      "started_at": "2026-11-08T12:02:16+00:00",
       "status": "ok",
       "datasets": {
         "twse_monthly_revenue": {
@@ -31,17 +31,17 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.7
+      "duration_s": 1.2
     },
     "markets": {
       "source": "markets",
-      "started_at": "2026-11-07T11:50:03+00:00",
+      "started_at": "2026-11-08T12:02:17+00:00",
       "status": "ok",
       "datasets": {
         "market_prices": {
           "records": 115,
-          "added": 5,
-          "unchanged": 110
+          "added": 0,
+          "unchanged": 115
         }
       },
       "warnings": [],
@@ -131,7 +131,7 @@
     },
     "silicondata": {
       "source": "silicondata",
-      "started_at": "2026-11-07T11:50:04+00:00",
+      "started_at": "2026-11-08T12:02:18+00:00",
       "status": "ok",
       "datasets": {
         "sdllmtk_daily": {
@@ -141,11 +141,11 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.3
+      "duration_s": 0.5
     }
   },
   "last_run": {
-    "at": "2026-11-07T11:50:05+00:00",
+    "at": "2026-11-08T12:02:18+00:00",
     "schedule": "daily",
     "sources": [
       "openrouter_prices",
@@ -157,11 +157,11 @@
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-11-07T11:50:05+00:00"
+      "at": "2026-11-08T12:02:19+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-11-07T11:50:05+00:00"
+      "at": "2026-11-08T12:02:20+00:00"
     }
   }
 }
