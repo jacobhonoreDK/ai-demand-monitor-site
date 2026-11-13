@@ -2,13 +2,13 @@
   "sources": {
     "openrouter_prices": {
       "source": "openrouter_prices",
-      "started_at": "2026-11-12T13:53:03+00:00",
+      "started_at": "2026-11-13T13:16:47+00:00",
       "status": "ok",
       "datasets": {
         "openrouter_prices": {
-          "records": 460,
-          "added": 16,
-          "unchanged": 444
+          "records": 462,
+          "added": 22,
+          "unchanged": 440
         },
         "openrouter_price_snapshots": {
           "records": 1,
@@ -17,25 +17,25 @@
         }
       },
       "warnings": [],
-      "duration_s": 0.1
+      "duration_s": 0.2
     },
     "twse": {
       "source": "twse",
-      "started_at": "2026-11-12T13:53:04+00:00",
+      "started_at": "2026-11-13T13:16:47+00:00",
       "status": "ok",
       "datasets": {
         "twse_monthly_revenue": {
           "records": 1,
-          "added": 1,
-          "unchanged": 0
+          "added": 0,
+          "unchanged": 1
         }
       },
       "warnings": [],
-      "duration_s": 1.4
+      "duration_s": 1.8
     },
     "markets": {
       "source": "markets",
-      "started_at": "2026-11-12T13:53:05+00:00",
+      "started_at": "2026-11-13T13:16:49+00:00",
       "status": "ok",
       "datasets": {
         "market_prices": {
@@ -45,7 +45,7 @@
         }
       },
       "warnings": [],
-      "duration_s": 1.2
+      "duration_s": 2.4
     },
     "openrouter_volume": {
       "source": "openrouter_volume",
@@ -131,21 +131,21 @@
     },
     "silicondata": {
       "source": "silicondata",
-      "started_at": "2026-11-12T13:53:06+00:00",
+      "started_at": "2026-11-13T13:16:51+00:00",
       "status": "ok",
       "datasets": {
         "sdllmtk_daily": {
           "records": 8,
-          "added": 1,
-          "unchanged": 7
+          "added": 2,
+          "unchanged": 6
         }
       },
       "warnings": [],
-      "duration_s": 0.4
+      "duration_s": 1.2
     }
   },
   "last_run": {
-    "at": "2026-11-12T13:53:07+00:00",
+    "at": "2026-11-13T13:16:52+00:00",
     "schedule": "daily",
     "sources": [
       "openrouter_prices",
@@ -157,11 +157,11 @@
   "postprocess": {
     "manual": {
       "status": "ok",
-      "at": "2026-11-12T13:53:07+00:00"
+      "at": "2026-11-13T13:16:53+00:00"
     },
     "scoring": {
       "status": "ok",
-      "at": "2026-11-12T13:53:07+00:00"
+      "at": "2026-11-13T13:16:53+00:00"
     }
   }
 }
