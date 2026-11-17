@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T13:51:26+00:00",
+  "generated_at": "2026-11-17T14:43:31+00:00",
   "series": {
     "google_api_tokens_per_minute": {
       "layer": 1,
@@ -316,10 +316,18 @@
           "published": "2026-11-15",
           "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
           "auto": true
+        },
+        {
+          "metric": "sdllmtk_usd_per_mtok",
+          "period_end": "2026-11-16",
+          "value": 0.7927,
+          "published": "2026-11-16",
+          "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
+          "auto": true
         }
       ],
       "status": {
-        "latest": "2026-11-15",
+        "latest": "2026-11-16",
         "due": false,
         "auto": true,
         "reason": "Automatisk: Silicon Data indeksside (dagligt)"
