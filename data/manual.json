@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:12:12+00:00",
+  "generated_at": "2026-11-21T13:37:09+00:00",
   "series": {
     "google_api_tokens_per_minute": {
       "layer": 1,
@@ -344,7 +344,7 @@
         {
           "metric": "sdllmtk_usd_per_mtok",
           "period_end": "2026-11-19",
-          "value": 2.0425,
+          "value": 0.7051,
           "published": "2026-11-19",
           "source": "https://www.silicondata.com/products/silicon-index/llm-token-expenditure-index",
           "auto": true
